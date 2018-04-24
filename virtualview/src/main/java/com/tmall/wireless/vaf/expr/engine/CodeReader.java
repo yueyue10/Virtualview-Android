@@ -24,9 +24,9 @@
 
 package com.tmall.wireless.vaf.expr.engine;
 
-import android.util.Log;
 
 import com.libra.expr.common.ExprCode;
+import com.socks.library.KLog;
 
 public class CodeReader {
     private final static String TAG = "CodeReader";
@@ -44,7 +44,7 @@ public class CodeReader {
     }
 
     public void release() {
-//        Log.d(TAG, "release");
+//        KLog.d(TAG, "release");
 
         if (null != mCode) {
 //            mCode.clear();
@@ -70,7 +70,7 @@ public class CodeReader {
         if (null != mCode && mCurIndex < mCode.mEndPos) {
             ret = mCode.mCodeBase[mCurIndex++];
         } else {
-            Log.e(TAG, "readByte error mCode:" + mCode + "  mCurIndex:"
+            KLog.e(TAG, "readByte error mCode:" + mCode + "  mCurIndex:"
                     + mCurIndex);
         }
 
@@ -84,7 +84,7 @@ public class CodeReader {
             ret = (short) (mCode.mCodeBase[mCurIndex++] & 0xff);
             ret = (short) ((((short) mCode.mCodeBase[mCurIndex++]) << 8) | ret);
         } else {
-            Log.e(TAG, "readShort error mCode:" + mCode + "  mCurIndex:"
+            KLog.e(TAG, "readShort error mCode:" + mCode + "  mCurIndex:"
                     + mCurIndex);
         }
 
@@ -104,7 +104,7 @@ public class CodeReader {
                 move += step;
             }
         } else {
-            Log.e(TAG, "readInt error mCode:" + mCode + "  mCurIndex:"
+            KLog.e(TAG, "readInt error mCode:" + mCode + "  mCurIndex:"
                     + mCurIndex);
         }
 

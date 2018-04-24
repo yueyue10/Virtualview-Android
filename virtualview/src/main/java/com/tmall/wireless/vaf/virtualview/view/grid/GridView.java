@@ -116,7 +116,7 @@ public class GridView extends ViewGroup {
 
         int childCount = this.getChildCount();
 
-//        Log.d(TAG, "width:" + width+ "  widthMode:" + widthMode + "  height:" + height + "  heightMode:" + heightMode);
+//        KLog.d(TAG, "width:" + width+ "  widthMode:" + widthMode + "  height:" + height + "  heightMode:" + heightMode);
         mItemWidth = (width - space) / mColumnCount;
         int index = 0;
         if (mItemHeight <= 0) {
@@ -131,7 +131,7 @@ public class GridView extends ViewGroup {
             mCalItemHeight = mItemHeight;
         }
 
-//        Log.d(TAG, "mCalItemHeight:" + mCalItemHeight + "mItemWidth:" + mItemWidth);
+//        KLog.d(TAG, "mCalItemHeight:" + mCalItemHeight + "mItemWidth:" + mItemWidth);
 
         int widthSpec = View.MeasureSpec.makeMeasureSpec(mItemWidth, View.MeasureSpec.EXACTLY);
         int heightSpec = View.MeasureSpec.makeMeasureSpec(mCalItemHeight, View.MeasureSpec.EXACTLY);

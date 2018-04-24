@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.virtualviewdemo.custom;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import com.tmall.wireless.vaf.virtualview.event.EventData;
 import com.tmall.wireless.vaf.virtualview.event.IEventProcessor;
 
@@ -39,7 +39,7 @@ public class ClickProcessorImpl implements IEventProcessor {
 
     @Override
     public boolean process(EventData data) {
-        Log.d("ClickProcessorImpl", "event " + data.mVB + " " + data.mVB.getAction());
+        KLog.d("ClickProcessorImpl", "event " + data.mVB + " " + data.mVB.getAction());
         return true;
     }
 

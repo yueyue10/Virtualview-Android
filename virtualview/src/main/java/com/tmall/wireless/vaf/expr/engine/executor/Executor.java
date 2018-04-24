@@ -81,7 +81,7 @@ public abstract class Executor {
 //    }
 //
 //    public void setCodeReader(CodeReader reader) {
-////        Log.d(TAG, "reader" + reader);
+////        KLog.d(TAG, "reader" + reader);
 //        mCodeReader = reader;
 //    }
 

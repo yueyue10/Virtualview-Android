@@ -30,7 +30,7 @@ import java.util.List;
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.util.SparseArray;
 import com.tmall.wireless.vaf.virtualview.ViewFactory;
 import com.tmall.wireless.vaf.virtualview.core.Layout;
@@ -123,7 +123,7 @@ public class ViewManager {
                 }
                 v.setViewType(type);
             } else {
-                Log.e(TAG, "new view failed type:" + type);
+                KLog.e(TAG, "new view failed type:" + type);
             }
         } else {
             v = vList.remove(0);
@@ -144,10 +144,10 @@ public class ViewManager {
                 }
                 vList.add(v);
             } else {
-                Log.e(TAG, "recycle type invalidate:" + type);
+                KLog.e(TAG, "recycle type invalidate:" + type);
                 RuntimeException here = new RuntimeException("here");
                 here.fillInStackTrace();
-                Log.w(TAG, "Called: " + this, here);
+                KLog.w(TAG, "Called: " + this, here);
             }
         }
     }

@@ -30,7 +30,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.TextBaseCommon;
 import com.libra.virtualview.common.ViewBaseCommon;
@@ -109,7 +109,7 @@ public class VirtualText extends TextBase {
                 refresh();
             }
         } else {
-            Log.e(TAG, "setData type error:" + data);
+            KLog.e(TAG, "setData type error:" + data);
         }
     }
 
@@ -158,7 +158,7 @@ public class VirtualText extends TextBase {
                 mBorderTopLeftRadius, mBorderTopRightRadius, mBorderBottomLeftRadius, mBorderBottomRightRadius);
 
         } else {
-            Log.w(TAG, "skip draw text");
+            KLog.w(TAG, "skip draw text");
         }
     }
 

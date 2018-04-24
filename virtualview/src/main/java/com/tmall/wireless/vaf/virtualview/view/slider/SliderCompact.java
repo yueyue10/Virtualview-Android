@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.virtualview.view.slider;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import com.libra.Utils;
 import com.libra.expr.common.ExprCode;
 import com.libra.virtualview.common.StringBase;
@@ -92,7 +92,7 @@ public class SliderCompact extends NativeViewBase implements SliderView.Listener
             }
             if (null != engine && engine.execute(this, mScrollCode) ) {
             } else {
-                Log.e(TAG, "callPageFlip execute failed");
+                KLog.e(TAG, "callPageFlip execute failed");
             }
         }
     }

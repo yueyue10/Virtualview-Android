@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 
@@ -37,7 +37,7 @@ public class ModEqExecutor extends CompositeEqExecutor {
     @Override
     protected void calcIntInt(Data result, int l, int r) {
         if (0 == r) {
-            Log.e(TAG, "div zero");
+            KLog.e(TAG, "div zero");
         }
         result.setInt(l % r);
     }
@@ -50,7 +50,7 @@ public class ModEqExecutor extends CompositeEqExecutor {
     @Override
     protected void calcFloatInt(Data result, float l, int r) {
         if (0 == r) {
-            Log.e(TAG, "div zero");
+            KLog.e(TAG, "div zero");
         }
         result.setFloat(l % r);
     }

@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.virtualviewdemo.vs;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import android.widget.Toast;
 import com.libra.expr.common.ExprCode;
@@ -59,7 +59,7 @@ public class VSEngine {
         String vs = "this.name = (data.time > data.id) && (data.time >= 3)";
         engine.run(context, vs);
 
-        Log.d(TAG, "test result:" + context.getName());
+        KLog.d(TAG, "test result:" + context.getName());
         return context.getName();
     }
 
@@ -82,13 +82,13 @@ public class VSEngine {
     public void run(Object context, String str) {
         boolean ret = mCompiler.doCompile(str);
         if (ret) {
-//            Log.d(TAG, "compile successful");
+//            KLog.d(TAG, "compile successful");
             ExprCode ec = mCompiler.getCode();
 
             ret = mEngine.execute(context, ec);
-//            Log.d(TAG, "exe result:" + ret);
+//            KLog.d(TAG, "exe result:" + ret);
         } else {
-            Log.e(TAG, "compile failed");
+            KLog.e(TAG, "compile failed");
         }
     }
 }

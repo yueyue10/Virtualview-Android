@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.StringBase;
 import com.tmall.wireless.vaf.expr.engine.data.Data;
@@ -96,7 +96,7 @@ public abstract class ArithExecutor extends Executor {
                 break;
 
             default:
-                Log.e(TAG, "can not read this type:" + type);
+                KLog.e(TAG, "can not read this type:" + type);
                 ret = null;
                 break;
         }
@@ -113,26 +113,26 @@ public abstract class ArithExecutor extends Executor {
         mTempObjs.clear();
 
         int registerId = mCodeReader.readInt();
-//        Log.d(TAG, "findObject registerId:" + registerId);
+//        KLog.d(TAG, "findObject registerId:" + registerId);
         if (registerId > -1) {
-//            Log.d(TAG, "read obj from register id:" + registerId);
+//            KLog.d(TAG, "read obj from register id:" + registerId);
             Data d = mRegisterManger.get(registerId);
             if (null != d) {
                 if (Data.TYPE_OBJECT == d.mType) {
-//                Log.d(TAG, "object:" + d.mValue);
+//                KLog.d(TAG, "object:" + d.mValue);
                     ret.add(d.getObject());
                 } else {
-                    Log.e(TAG, "read obj from register failed obj:" + d);
+                    KLog.e(TAG, "read obj from register failed obj:" + d);
 //                return ret;
                 }
             } else {
-                Log.e(TAG, "read obj from register failed  registerId:" + registerId);
+                KLog.e(TAG, "read obj from register failed  registerId:" + registerId);
             }
         }
 
         int count = mCodeReader.readByte();
         mItemCount = count;
-//        Log.d(TAG, "findObject count:" + count + "  registerId:" + registerId);
+//        KLog.d(TAG, "findObject count:" + count + "  registerId:" + registerId);
         if (count >= 1) {
 //            NativeObjectManager cm = mAppContext.getNativeObjectManager();
 //            StringLoader sm = mAppContext.getStringLoader();
@@ -150,10 +150,10 @@ public abstract class ArithExecutor extends Executor {
                             ret.add(obj);
                             successful = true;
                         } else {
-                            Log.e(TAG, "findObject can not find module:" + moduleName);
+                            KLog.e(TAG, "findObject can not find module:" + moduleName);
                         }
                     } else {
-                        Log.e(TAG, "findObject count invalidate:" + count);
+                        KLog.e(TAG, "findObject count invalidate:" + count);
                     }
                     return ret;
                 } else if (StringBase.STR_ID_data == id) {
@@ -171,12 +171,12 @@ public abstract class ArithExecutor extends Executor {
                         }
 
                         if (null == cur) {
-                            Log.e(TAG, "findObject can not find com id:" + id);
+                            KLog.e(TAG, "findObject can not find com id:" + id);
                         } else {
                             ret.add(cur);
                         }
                     } else {
-                        Log.e(TAG, "findObject first token invalidate id:" + id);
+                        KLog.e(TAG, "findObject first token invalidate id:" + id);
                     }
                 }
             }
@@ -203,7 +203,7 @@ public abstract class ArithExecutor extends Executor {
                                             mTempObjs.add(p);
                                         }
                                     } else {
-                                        Log.w(TAG, "warning");
+                                        KLog.w(TAG, "warning");
                                     }
                                 }
 
@@ -256,7 +256,7 @@ public abstract class ArithExecutor extends Executor {
 
                             default:
                                 successful = false;
-                                Log.e(TAG, "findObject invalidate system id:" + id);
+                                KLog.e(TAG, "findObject invalidate system id:" + id);
                         }
                     } else {
                         mTempObjs.clear();
@@ -266,7 +266,7 @@ public abstract class ArithExecutor extends Executor {
                             if (null != obj) {
                                 mTempObjs.add(obj);
                             } else {
-                                Log.e(TAG, "can not find obj:" + mStringSupport.getString(id));
+                                KLog.e(TAG, "can not find obj:" + mStringSupport.getString(id));
                             }
                         }
 
@@ -281,7 +281,7 @@ public abstract class ArithExecutor extends Executor {
                 }
             }
         } else {
-            Log.e(TAG, "findObject count invalidate:" + count);
+            KLog.e(TAG, "findObject count invalidate:" + count);
         }
 
         if (!successful) {
@@ -304,7 +304,7 @@ public abstract class ArithExecutor extends Executor {
         if (null != objs) {
             ret = true;
             int propertyNameId = mCodeReader.readInt();
-//            Log.d(TAG, "readVar name:" + mAppContext.getStringLoader().getString(propertyNameId));
+//            KLog.d(TAG, "readVar name:" + mAppContext.getStringLoader().getString(propertyNameId));
 //            NativeObjectManager nm = mAppContext.getNativeObjectManager();
             for (Object obj : objs) {
                 if (obj == mDataManager) {
@@ -312,25 +312,25 @@ public abstract class ArithExecutor extends Executor {
                     Object[] exeParams = new Object[1];
                     xx[0] = String.class;
                     exeParams[0] = mStringSupport.getString(propertyNameId);
-//                    Log.d(TAG, "getData exeParams:" + exeParams[0]);
+//                    KLog.d(TAG, "getData exeParams:" + exeParams[0]);
                     try {
                         Method method = obj.getClass().getMethod("getData", xx);
                         obj = method.invoke(obj, exeParams);
                     } catch (NoSuchMethodException e) {
                         e.printStackTrace();
-                        Log.e(TAG, "getData NoSuchMethodException:");
+                        KLog.e(TAG, "getData NoSuchMethodException:");
                     } catch (InvocationTargetException e) {
                         e.printStackTrace();
-                        Log.e(TAG, "getData InvocationTargetException:");
+                        KLog.e(TAG, "getData InvocationTargetException:");
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
-                        Log.e(TAG, "getData IllegalAccessException:");
+                        KLog.e(TAG, "getData IllegalAccessException:");
                     }
-//                    Log.d(TAG, "getData result:" + obj + obj.getClass());
+//                    KLog.d(TAG, "getData result:" + obj + obj.getClass());
 
                 } else {
                     obj = mNativeObjectManager.getPropertyImp(obj, propertyNameId);
-//                Log.d(TAG, "readVar value:" + obj);
+//                KLog.d(TAG, "readVar value:" + obj);
                 }
 
                 if (null != obj) {
@@ -344,11 +344,11 @@ public abstract class ArithExecutor extends Executor {
                     } else {
                         data.setObject(obj);
 //                        ret = false;
-//                        Log.e(TAG, "invalidate obj type:" + obj);
+//                        KLog.e(TAG, "invalidate obj type:" + obj);
                     }
                     break;
                 } else {
-                    Log.e(TAG, "getProperty failed");
+                    KLog.e(TAG, "getProperty failed");
                 }
             }
         }

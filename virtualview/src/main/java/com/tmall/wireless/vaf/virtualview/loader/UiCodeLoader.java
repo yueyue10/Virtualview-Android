@@ -27,7 +27,7 @@ package com.tmall.wireless.vaf.virtualview.loader;
 import java.nio.charset.Charset;
 
 import android.support.v4.util.ArrayMap;
-import android.util.Log;
+import com.socks.library.KLog;
 import com.libra.virtualview.common.Common;
 
 /**
@@ -55,7 +55,7 @@ public class UiCodeLoader {
             ret = mTypeToCodeReader.get(type);
             ret.seek(mTypeToPos.get(type));
         } else {
-            Log.e(TAG, "getCode type invalide type:" + type + mTypeToCodeReader.containsKey(type) + " " + mTypeToPos
+            KLog.e(TAG, "getCode type invalide type:" + type + mTypeToCodeReader.containsKey(type) + " " + mTypeToPos
                 .containsKey(type));
         }
         return ret;
@@ -66,7 +66,7 @@ public class UiCodeLoader {
 
         int count = reader.readInt();
         //count should be 1
-        Log.w(TAG, "load view count: " + count);
+        KLog.w(TAG, "load view count: " + count);
         short nameSize = reader.readShort();
         String name = new String(reader.getCode(), reader.getPos(), nameSize, Charset.forName("UTF-8"));
         CodeReader oldCodeReader = mTypeToCodeReader.get(name);
@@ -74,7 +74,7 @@ public class UiCodeLoader {
             int oldPatchVersion = oldCodeReader.getPatchVersion();
             if (patchVersion <= oldPatchVersion) {
                 //avoid loading code repeat
-                Log.w(TAG, "load view name " + name + " should not override from " + patchVersion + " to "
+                KLog.w(TAG, "load view name " + name + " should not override from " + patchVersion + " to "
                     + patchVersion);
                 ret = false;
                 return ret;
@@ -89,7 +89,7 @@ public class UiCodeLoader {
 
         int count = reader.readInt();
         //count should be 1
-        Log.w(TAG, "load view count: " + count);
+        KLog.w(TAG, "load view count: " + count);
         short nameSize = reader.readShort();
         String name = new String(reader.getCode(), reader.getPos(), nameSize, Charset.forName("UTF-8"));
         ret = loadFromBufferInternally(reader, nameSize, name);
@@ -98,7 +98,7 @@ public class UiCodeLoader {
 
     private boolean loadFromBufferInternally(CodeReader reader, short nameSize, String name) {
         boolean ret = true;
-        Log.w(TAG, "load view name " + name);
+        KLog.w(TAG, "load view name " + name);
         mTypeToCodeReader.put(name, reader);
         reader.seekBy(nameSize);
 
@@ -106,7 +106,7 @@ public class UiCodeLoader {
         mTypeToPos.put(name, reader.getPos());
         if (!reader.seekBy(uiCodeSize) ) {
             ret = false;
-            Log.e(TAG, "seekBy error:" + uiCodeSize);
+            KLog.e(TAG, "seekBy error:" + uiCodeSize);
         }
 
         return ret;

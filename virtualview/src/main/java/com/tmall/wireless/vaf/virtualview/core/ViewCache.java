@@ -30,7 +30,7 @@ import java.util.List;
 
 import android.support.v4.app.ShareCompat.IntentBuilder;
 import android.support.v4.util.ArrayMap;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import com.libra.TextUtils;
 import com.libra.Utils;
@@ -268,12 +268,12 @@ public class ViewCache {
                         }
                         break;
                     default:
-                        //Log.e(TAG, "can not set value to " + (mParser != null
+                        //KLog.e(TAG, "can not set value to " + (mParser != null
                         //    ? mParser.getValue() : "") + " valueType " + mValueType);
                         break;
                 }
             } else {
-                //Log.e(TAG, "can not load value from " + (mParser != null
+                //KLog.e(TAG, "can not load value from " + (mParser != null
                 //    ? mParser.getValue() : "") + " valueType " + mValueType);
             }
         }

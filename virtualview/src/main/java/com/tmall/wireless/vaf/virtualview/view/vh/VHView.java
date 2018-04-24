@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.view.vh;
 
 import android.content.Context;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -139,7 +139,7 @@ public class VHView extends ViewGroup {
                 break;
 
             default:
-                Log.e(TAG, "onMeasure invalidate orientation:" + mOrientation);
+                KLog.e(TAG, "onMeasure invalidate orientation:" + mOrientation);
                 break;
         }
     }
@@ -176,7 +176,7 @@ public class VHView extends ViewGroup {
                 break;
 
             default:
-                Log.e(TAG, "onLayout invalidate orientation:" + mOrientation);
+                KLog.e(TAG, "onLayout invalidate orientation:" + mOrientation);
                 break;
         }
     }

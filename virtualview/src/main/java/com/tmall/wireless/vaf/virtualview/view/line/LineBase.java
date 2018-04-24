@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.view.line;
 
 import android.graphics.Color;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.Utils;
 import com.libra.virtualview.common.StringBase;
@@ -122,10 +122,10 @@ public abstract class LineBase extends ViewBase {
                                     mDashEffect = d;
                                 }
                             } else {
-                                Log.e(TAG, "length invalidate:" + arr.length);
+                                KLog.e(TAG, "length invalidate:" + arr.length);
                             }
                         } else {
-                            Log.e(TAG, "no match []");
+                            KLog.e(TAG, "no match []");
                         }
                     }
                     break;

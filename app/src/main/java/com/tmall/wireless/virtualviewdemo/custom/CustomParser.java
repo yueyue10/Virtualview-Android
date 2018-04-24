@@ -25,7 +25,7 @@
 package com.tmall.wireless.virtualviewdemo.custom;
 
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.Common;
 import com.libra.virtualview.compiler.parser.Parser;
@@ -80,7 +80,7 @@ public class CustomParser extends ViewBaseParser {
                         ret = CONVERT_RESULT_ERROR;
                     }
                 } else {
-                    Log.e(TAG, "parseInteger value invalidate:" + value);
+                    KLog.e(TAG, "parseInteger value invalidate:" + value);
                     ret = CONVERT_RESULT_ERROR;
                 }
             } else {

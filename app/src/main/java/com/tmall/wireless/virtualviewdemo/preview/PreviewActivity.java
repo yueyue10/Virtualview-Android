@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Base64;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +15,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import com.socks.library.KLog;
 import com.tmall.wireless.vaf.framework.VafContext;
 import com.tmall.wireless.vaf.framework.ViewManager;
 import com.tmall.wireless.vaf.virtualview.core.IContainer;
@@ -85,9 +85,9 @@ public class PreviewActivity extends AppCompatActivity {
         sVafContext.getEventManager().register(EventManager.TYPE_Click, new IEventProcessor() {
             @Override
             public boolean process(EventData data) {
-                Log.d(TAG, "TYPE_Click data view:" + data.mView);
-                Log.d(TAG, "TYPE_Click view name:" + data.mVB.getTag("name"));
-                Log.d(TAG, "TYPE_Click view traceId:" + data.mVB.getTag("activityTraceId"));
+                KLog.d(TAG, "TYPE_Click data view:" + data.mView);
+                KLog.d(TAG, "TYPE_Click view name:" + data.mVB.getTag("name"));
+                KLog.d(TAG, "TYPE_Click view traceId:" + data.mVB.getTag("activityTraceId"));
                 Toast.makeText(PreviewActivity.this,
                         "TYPE_Click view name:" + data.mVB.getTag("name")
                                 + "\n traceId:" + data.mVB.getTag("activityTraceId"), Toast.LENGTH_LONG).show();
@@ -98,9 +98,9 @@ public class PreviewActivity extends AppCompatActivity {
         sVafContext.getEventManager().register(EventManager.TYPE_Exposure, new IEventProcessor() {
             @Override
             public boolean process(EventData data) {
-                Log.d(TAG, "TYPE_Exposure data view:" + data.mView);
-                Log.d(TAG, "TYPE_Exposure view name:" + data.mVB.getTag("name"));
-                Log.d(TAG, "TYPE_Exposure view traceId:" + data.mVB.getTag("activityTraceId"));
+                KLog.d(TAG, "TYPE_Exposure data view:" + data.mView);
+                KLog.d(TAG, "TYPE_Exposure view name:" + data.mVB.getTag("name"));
+                KLog.d(TAG, "TYPE_Exposure view traceId:" + data.mVB.getTag("activityTraceId"));
 //                    Toast.makeText(PreviewActivity.this,
 //                            "TYPE_Exposure view name:" + data.mVB.getTag("name")
 //                                    + "traceId:" + data.mVB.getTag("activityTraceId"), Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class PreviewActivity extends AppCompatActivity {
 
     protected void preview(String templateName, JSONObject jsonData) {
         if (TextUtils.isEmpty(templateName)) {
-            Log.e(TAG, "Template name should not be empty!!!!");
+            KLog.e(TAG, "Template name should not be empty!!!!");
             return;
         }
         mContainer = sVafContext.getContainerService().getContainer(templateName, true);

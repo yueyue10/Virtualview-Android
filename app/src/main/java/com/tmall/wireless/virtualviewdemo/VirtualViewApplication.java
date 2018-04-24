@@ -30,7 +30,7 @@ import java.util.List;
 import android.app.Application;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
+import com.socks.library.KLog;
 import com.libra.virtualview.common.BizCommon;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Picasso.LoadedFrom;
@@ -122,7 +122,7 @@ public class VirtualViewApplication extends Application {
             if (mListener != null) {
                 mListener.onImageLoadSuccess(bitmap);
             }
-            Log.d("VirtualViewApplication", "onBitmapLoaded " + from);
+            KLog.d("VirtualViewApplication", "onBitmapLoaded " + from);
         }
 
         @Override
@@ -130,12 +130,12 @@ public class VirtualViewApplication extends Application {
             if (mListener != null) {
                 mListener.onImageLoadFailed();
             }
-            Log.d("VirtualViewApplication", "onBitmapFailed ");
+            KLog.d("VirtualViewApplication", "onBitmapFailed ");
         }
 
         @Override
         public void onPrepareLoad(Drawable placeHolderDrawable) {
-            Log.d("VirtualViewApplication", "onPrepareLoad ");
+            KLog.d("VirtualViewApplication", "onPrepareLoad ");
         }
     }
 
@@ -161,7 +161,7 @@ public class VirtualViewApplication extends Application {
                 @Override
                 public void bindImage(String uri, final ImageBase imageBase, int reqWidth, int reqHeight) {
                     RequestCreator requestCreator = Picasso.with(VirtualViewApplication.this).load(uri);
-                    Log.d("VirtualViewApplication", "bindImage request width height " + reqHeight + " " + reqWidth);
+                    KLog.d("VirtualViewApplication", "bindImage request width height " + reqHeight + " " + reqWidth);
                     if (reqHeight > 0 || reqWidth > 0) {
                         requestCreator.resize(reqWidth, reqHeight);
                     }
@@ -173,7 +173,7 @@ public class VirtualViewApplication extends Application {
                 @Override
                 public void getBitmap(String uri, int reqWidth, int reqHeight, final Listener lis) {
                     RequestCreator requestCreator = Picasso.with(VirtualViewApplication.this).load(uri);
-                    Log.d("VirtualViewApplication", "getBitmap request width height " + reqHeight + " " + reqWidth);
+                    KLog.d("VirtualViewApplication", "getBitmap request width height " + reqHeight + " " + reqWidth);
                     if (reqHeight > 0 || reqWidth > 0) {
                         requestCreator.resize(reqWidth, reqHeight);
                     }

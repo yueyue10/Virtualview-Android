@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 
@@ -37,7 +37,7 @@ public class DivExecutor extends BinExecutor {
     @Override
     protected int calcIntInt(Data result, int l, int r) {
         if (0 == r) {
-            Log.e(TAG, "div zero");
+            KLog.e(TAG, "div zero");
             return RESULT_STATE_ERROR;
         } else {
             result.setInt(l / r);
@@ -54,7 +54,7 @@ public class DivExecutor extends BinExecutor {
     @Override
     protected int calcFloatInt(Data result, float l, int r) {
         if (0 == r) {
-            Log.e(TAG, "div zero");
+            KLog.e(TAG, "div zero");
             return RESULT_STATE_ERROR;
         } else {
             result.setFloat(l / r);

@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.virtualview.layout;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 
 import com.libra.virtualview.common.LayoutCommon;
@@ -133,7 +133,7 @@ public class FrameLayout extends Layout {
         } else if (View.MeasureSpec.EXACTLY == mode) {
             ret = size;
         } else {
-            Log.e(TAG, "getRealWidth error mode:" + mode);
+            KLog.e(TAG, "getRealWidth error mode:" + mode);
         }
 
         return ret;

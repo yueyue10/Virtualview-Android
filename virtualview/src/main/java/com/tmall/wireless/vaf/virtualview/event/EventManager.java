@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.virtualview.event;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,7 @@ public class EventManager {
 
             pList.add(processor);
         } else {
-            Log.e(TAG, "register failed type:" + type + "  processor:" + processor);
+            KLog.e(TAG, "register failed type:" + type + "  processor:" + processor);
         }
     }
 
@@ -67,7 +67,7 @@ public class EventManager {
                 pList.remove(processor);
             }
         } else {
-            Log.e(TAG, "unregister failed type:" + type + "  processor:" + processor);
+            KLog.e(TAG, "unregister failed type:" + type + "  processor:" + processor);
         }
     }
 

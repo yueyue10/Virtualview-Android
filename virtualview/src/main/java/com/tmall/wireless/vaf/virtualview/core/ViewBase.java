@@ -38,7 +38,7 @@ import android.os.Build.VERSION;
 import android.os.Trace;
 import android.support.v4.util.SimpleArrayMap;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
@@ -312,7 +312,7 @@ public abstract class ViewBase implements IView {
                             item.mValue = value;
                             ret = true;
                         } else {
-                            Log.e(TAG, "setUserVar set int failed");
+                            KLog.e(TAG, "setUserVar set int failed");
                         }
                         break;
 
@@ -321,7 +321,7 @@ public abstract class ViewBase implements IView {
                             item.mValue = value;
                             ret = true;
                         } else {
-                            Log.e(TAG, "setUserVar set float failed");
+                            KLog.e(TAG, "setUserVar set float failed");
                         }
                         break;
 
@@ -330,7 +330,7 @@ public abstract class ViewBase implements IView {
                             item.mValue = value;
                             ret = true;
                         } else {
-                            Log.e(TAG, "setUserVar set string failed");
+                            KLog.e(TAG, "setUserVar set string failed");
                         }
                         break;
                     default:
@@ -643,7 +643,7 @@ public abstract class ViewBase implements IView {
             }
             if (null != engine && engine.execute(this, mClickCode)) {
             } else {
-                Log.e(TAG, "onClick execute failed");
+                KLog.e(TAG, "onClick execute failed");
             }
         }
 
@@ -807,7 +807,7 @@ public abstract class ViewBase implements IView {
             ExprEngine engine = mContext.getExprEngine();
             if (null != engine && engine.execute(this, mBeforeLoadDataCode)) {
             } else {
-                Log.e(TAG, "mBeforeLoadDataCode execute failed");
+                KLog.e(TAG, "mBeforeLoadDataCode execute failed");
             }
         }
     }
@@ -817,7 +817,7 @@ public abstract class ViewBase implements IView {
             ExprEngine engine = mContext.getExprEngine();
             if (null != engine && engine.execute(this, mAfterLoadDataCode)) {
             } else {
-                Log.e(TAG, "BeforeLoadDataCode execute failed");
+                KLog.e(TAG, "BeforeLoadDataCode execute failed");
             }
         }
     }
@@ -911,7 +911,7 @@ public abstract class ViewBase implements IView {
             ExprEngine engine = mContext.getExprEngine();
             if (null != engine && engine.execute(this, mSetDataCode)) {
             } else {
-                Log.e(TAG, "setData execute failed");
+                KLog.e(TAG, "setData execute failed");
             }
         }
     }
@@ -970,15 +970,15 @@ public abstract class ViewBase implements IView {
                         mBean = (IBean) obj;
                         mBean.init(mContext.forViewConstruction(), this);
                     } else {
-                        Log.e(TAG, mClass + " is not bean");
+                        KLog.e(TAG, mClass + " is not bean");
                     }
                 }
             }
         } catch (InstantiationException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         } catch (IllegalAccessException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         }
     }

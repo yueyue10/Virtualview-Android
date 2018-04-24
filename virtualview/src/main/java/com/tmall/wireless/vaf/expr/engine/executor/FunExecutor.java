@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 import com.tmall.wireless.vaf.expr.engine.data.Value;
@@ -43,12 +43,12 @@ public class FunExecutor extends ArithExecutor {
     public int execute(Object com) {
         int ret = super.execute(com);
 
-//        Log.d(TAG, "execute -------");
+//        KLog.d(TAG, "execute -------");
         // read fun name ids
         Set<Object> objs = findObject();
         if (null != objs) {
             int funNameId = mCodeReader.readInt();
-//            Log.d(TAG, "execute funNameId:" + this.mAppContext.getStringLoader().getString(funNameId));
+//            KLog.d(TAG, "execute funNameId:" + this.mAppContext.getStringLoader().getString(funNameId));
 
             Value[] params = readParam();
             if (null != params) {
@@ -58,7 +58,7 @@ public class FunExecutor extends ArithExecutor {
                 }
             }
         } else {
-            Log.e(TAG, "execute findObject failed");
+            KLog.e(TAG, "execute findObject failed");
         }
 
         return ret;
@@ -78,36 +78,36 @@ public class FunExecutor extends ArithExecutor {
         String funName = mStringSupport.getString(funNameId);
         for (Object obj : objs) {
             try {
-//                Log.d(TAG, "funName:" + funName);
+//                KLog.d(TAG, "funName:" + funName);
                 Method method = obj.getClass().getMethod(funName, xx);
                 if (null != method) {
-//                    Log.d(TAG, "call exe fun:" + obj + " param:" + exeParams.length + "  param v:" + exeParams[0]);
+//                    KLog.d(TAG, "call exe fun:" + obj + " param:" + exeParams.length + "  param v:" + exeParams[0]);
                     Object returnValue = method.invoke(obj, exeParams);
-//                    Log.d(TAG, "returnValue:" + returnValue);
+//                    KLog.d(TAG, "returnValue:" + returnValue);
                     Data result = mRegisterManger.get(resultRegId);
                     if (null != returnValue) {
                         if (!result.set(returnValue)) {
-                            Log.e(TAG, "call set return value failed:" + returnValue);
+                            KLog.e(TAG, "call set return value failed:" + returnValue);
                         } else {
-//                        Log.d(TAG, "call set return value ok:" + obj);
+//                        KLog.d(TAG, "call set return value ok:" + obj);
                         }
                     } else {
                         result.reset();
                     }
-//                    Log.d(TAG, "returnValue:" + returnValue);
+//                    KLog.d(TAG, "returnValue:" + returnValue);
                     ret = true;
                 } else {
-                    Log.e(TAG, "get method failed:" + obj.getClass());
+                    KLog.e(TAG, "get method failed:" + obj.getClass());
                 }
             } catch (NoSuchMethodException e) {
 //            e.printStackTrace();
-                Log.e(TAG, "call get method failed:" + e + obj);
+                KLog.e(TAG, "call get method failed:" + e + obj);
             } catch (InvocationTargetException e) {
 //            e.printStackTrace();
-//                Log.e(TAG, "call InvocationTargetException:" + e.getMessage() + obj);
+//                KLog.e(TAG, "call InvocationTargetException:" + e.getMessage() + obj);
             } catch (IllegalAccessException e) {
 //            e.printStackTrace();
-                Log.e(TAG, "call get method failed:" + e + obj);
+                KLog.e(TAG, "call get method failed:" + e + obj);
             }
         }
 
@@ -118,16 +118,16 @@ public class FunExecutor extends ArithExecutor {
         // read param
         int paramCount = mCodeReader.readByte();
         Value[] ret = new Value[paramCount];
-//        Log.d(TAG, "readParam count:" + paramCount);
+//        KLog.d(TAG, "readParam count:" + paramCount);
         for (int i = 0; i < paramCount; ++i) {
             int type = mCodeReader.readByte();
-//            Log.d(TAG, "read param type:" + type);
+//            KLog.d(TAG, "read param type:" + type);
             Data d = readData(type);
             if (null != d) {
-//                Log.d(TAG, "readParam data:" + d);
+//                KLog.d(TAG, "readParam data:" + d);
                 ret[i] = d.mValue;
             } else {
-                Log.e(TAG, "read param failed:" + type);
+                KLog.e(TAG, "read param failed:" + type);
                 ret = null;
             }
         }

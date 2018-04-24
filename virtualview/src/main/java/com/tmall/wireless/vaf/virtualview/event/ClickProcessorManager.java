@@ -72,7 +72,7 @@ public class ClickProcessorManager {
                     // default
                     ret = mDefaultProcessor.process(data);
                 } else {
-//                    Log.e(TAG, "no processor");
+//                    KLog.e(TAG, "no processor");
                 }
             }
         }

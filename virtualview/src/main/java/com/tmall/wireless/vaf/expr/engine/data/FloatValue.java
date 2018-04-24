@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.data;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 /**
  * Created by gujicheng on 16/12/14.
@@ -44,7 +44,7 @@ public class FloatValue extends Value {
         if (null != v) {
             mValue = ((FloatValue)v).mValue;
         } else {
-            Log.e(TAG, "value is null");
+            KLog.e(TAG, "value is null");
         }
     }
 

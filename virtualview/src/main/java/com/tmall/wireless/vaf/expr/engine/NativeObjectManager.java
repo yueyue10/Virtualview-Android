@@ -26,7 +26,7 @@ package com.tmall.wireless.vaf.expr.engine;
 
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.expr.common.StringSupport;
 import com.tmall.wireless.vaf.expr.engine.data.Data;
@@ -60,7 +60,7 @@ public class NativeObjectManager {
     }
 
     public void reset() {
-//        Log.d(TAG, "reset");
+//        KLog.d(TAG, "reset");
         mViews.clear();
         mNativeObjects.clear();
     }
@@ -75,10 +75,10 @@ public class NativeObjectManager {
         if (!TextUtils.isEmpty(name) && null != obj) {
             mNativeObjects.put(name, obj);
 
-//            Log.d(TAG, "registerObject name:" + name);
+//            KLog.d(TAG, "registerObject name:" + name);
             return true;
         } else {
-            Log.e(TAG, "registerObject param invalidate");
+            KLog.e(TAG, "registerObject param invalidate");
         }
 
         return false;
@@ -86,7 +86,7 @@ public class NativeObjectManager {
 
     public boolean unregisterObject(String name) {
         if (!TextUtils.isEmpty(name)) {
-//            Log.d(TAG, "unregisterObject name:" + name);
+//            KLog.d(TAG, "unregisterObject name:" + name);
             mNativeObjects.remove(name);
             return true;
         }
@@ -106,27 +106,27 @@ public class NativeObjectManager {
             try {
                 String property = mStringLoader.getString(propertyId);
                 String prop = String.format("get%c%s", Character.toUpperCase(property.charAt(0)), property.substring(1).toString());
-//                Log.d(TAG, "getPropertyImp prop:" + prop);
+//                KLog.d(TAG, "getPropertyImp prop:" + prop);
                 Method method = obj.getClass().getMethod(prop);
                 if (null != method) {
                     ret = method.invoke(obj);
                 }
             } catch (InvocationTargetException e) {
 //                e.printStackTrace();
-//                Log.e(TAG, "getProperty failed:" + e);
+//                KLog.e(TAG, "getProperty failed:" + e);
             } catch (IllegalAccessException e) {
 //                e.printStackTrace();
-//                Log.e(TAG, "getProperty failed:" + e);
+//                KLog.e(TAG, "getProperty failed:" + e);
             } catch (NoSuchMethodException e) {
 //                e.printStackTrace();
-//                Log.e(TAG, "getProperty failed:" + e);
+//                KLog.e(TAG, "getProperty failed:" + e);
             }
 
             if (null == ret && obj instanceof ViewBase) {
                 ret = ((ViewBase)obj).getUserVar(propertyId);
             }
         } else {
-            Log.e(TAG, "getProperty param invalidate");
+            KLog.e(TAG, "getProperty param invalidate");
         }
 
         return ret;
@@ -140,23 +140,23 @@ public class NativeObjectManager {
                 String propertyName = mStringLoader.getString(propertyNameId);
                 String prop = String.format("set%c%s", Character.toUpperCase(propertyName.charAt(0)), propertyName.substring(1).toString());
                 Method method = null;
-//                Log.d(TAG, "setPropertyImp prop:" + prop + "  obj:" + obj);
+//                KLog.d(TAG, "setPropertyImp prop:" + prop + "  obj:" + obj);
                 method = obj.getClass().getMethod(prop, value.mValue.getValueClass());
                 if (null != method) {
                     method.invoke(obj, value.mValue.getValue());
                     ret = true;
                 } else {
-                    Log.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp find method failed:" + prop);
+                    KLog.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp find method failed:" + prop);
                 }
             } catch (InvocationTargetException e) {
 //                e.printStackTrace();
-                Log.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp failed:" + e);
+                KLog.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp failed:" + e);
             } catch (IllegalAccessException e) {
 //                e.printStackTrace();
-                Log.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp failed:" + e);
+                KLog.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp failed:" + e);
             } catch (NoSuchMethodException e) {
 //                e.printStackTrace();
-                Log.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp failed:" + e);
+                KLog.e(TAG, "view:" + obj.getClass() + "  setIntegerPropertyImp failed:" + e);
             }
 
             if (!ret && obj instanceof ViewBase) {
@@ -164,7 +164,7 @@ public class NativeObjectManager {
                 ret = vb.setUserVar(propertyNameId, value);
             }
         } else {
-            Log.e(TAG, "setIntegerPropertyImp param invalidate");
+            KLog.e(TAG, "setIntegerPropertyImp param invalidate");
         }
 
         return ret;

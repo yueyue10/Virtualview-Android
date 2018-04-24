@@ -27,7 +27,7 @@ package com.tmall.wireless.vaf.virtualview;
 import android.content.Context;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.util.SparseArray;
 
 import com.libra.virtualview.common.Common;
@@ -179,10 +179,10 @@ public class ViewFactory {
                 mBuilders.put(id, builder);
                 ret = true;
             } else {
-                Log.e(TAG, "register builder failed, already exist id:" + id);
+                KLog.e(TAG, "register builder failed, already exist id:" + id);
             }
         } else {
-            Log.e(TAG, "register builder failed, builder is null");
+            KLog.e(TAG, "register builder failed, builder is null");
         }
 
         return ret;
@@ -195,7 +195,7 @@ public class ViewFactory {
             mBuilders.put(id, builder);
             ret = true;
         } else {
-            Log.e(TAG, "register builder failed, builder is null");
+            KLog.e(TAG, "register builder failed, builder is null");
         }
 
         return ret;
@@ -211,7 +211,7 @@ public class ViewFactory {
 
             ret.attachViews();
         } else {
-            Log.e(TAG, "new view failed type:" + type);
+            KLog.e(TAG, "new view failed type:" + type);
         }
 
         return ret;
@@ -331,7 +331,7 @@ public class ViewFactory {
                                 }
                             } else {
                                 state = STATE_failed;
-                                Log.e(TAG, "can not find view id:" + comID);
+                                KLog.e(TAG, "can not find view id:" + comID);
                             }
                             break;
 
@@ -342,7 +342,7 @@ public class ViewFactory {
                                     ((Layout) c).addView(curView);
                                 } else {
                                     state = STATE_failed;
-                                    Log.e(TAG, "com can not contain subcomponent");
+                                    KLog.e(TAG, "com can not contain subcomponent");
                                 }
                                 curView = c;
                             } else {
@@ -352,7 +352,7 @@ public class ViewFactory {
                             break;
 
                         default:
-                            Log.e(TAG, "invalidate tag type:" + tag);
+                            KLog.e(TAG, "invalidate tag type:" + tag);
                             state = STATE_failed;
                             break;
                     }
@@ -371,10 +371,10 @@ public class ViewFactory {
                     ret.setVersion(version );
                 }
             } else {
-                Log.e(TAG, "can not find component type:" + type);
+                KLog.e(TAG, "can not find component type:" + type);
             }
         } else {
-            Log.e(TAG, "loader is null");
+            KLog.e(TAG, "loader is null");
         }
 
         return ret;

@@ -30,7 +30,7 @@ import android.support.v4.util.ArrayMap;
 import android.support.v4.util.SparseArrayCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -116,9 +116,9 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
     public void setData(Object data) {
         if (null != data && data instanceof JSONArray) {
             mData = (JSONArray) data;
-//            Log.d(TAG, "setData:" + mData);
+//            KLog.d(TAG, "setData:" + mData);
         } else {
-            Log.e(TAG, "setData failed:" + data);
+            KLog.e(TAG, "setData failed:" + data);
         }
 
         mStickyTopPos = 1000000;
@@ -145,7 +145,7 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
             }
 
         } else {
-            Log.e(TAG, "appendData failed:" + data);
+            KLog.e(TAG, "appendData failed:" + data);
         }
     }
 
@@ -178,7 +178,7 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
             v = container;
         }
 
-//        Log.d(TAG, "onCreateViewHolder id:" + mScrollerImp.mScroller.getId() + "v:" + v);
+//        KLog.d(TAG, "onCreateViewHolder id:" + mScrollerImp.mScroller.getId() + "v:" + v);
 
         if (null != lp && mSpan != 0) {
             int span = mSpan >> 1;
@@ -216,7 +216,7 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
                     myViewHolder.mStickyTop = false;
                 }
 
-//                Log.d(TAG, "onBindViewHolder id:" + mScrollerImp.mScroller.getId() + "  obj:" + obj);
+//                KLog.d(TAG, "onBindViewHolder id:" + mScrollerImp.mScroller.getId() + "  obj:" + obj);
 
                 myViewHolder.mViewBase.setVData(obj);
 
@@ -225,7 +225,7 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
                 }
                 myViewHolder.mViewBase.ready();
             } else {
-                Log.e(TAG, "failed");
+                KLog.e(TAG, "failed");
             }
 
             int threshold = mAutoRefreshThreshold;
@@ -238,7 +238,7 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
             }
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.e(TAG, "onBindViewHolder:" + e);
+            KLog.e(TAG, "onBindViewHolder:" + e);
         }
     }
 
@@ -260,10 +260,10 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
                     return newType;
                 }
             } catch (JSONException e) {
-                Log.e(TAG, "getItemViewType:" + e);
+                KLog.e(TAG, "getItemViewType:" + e);
             }
         } else {
-            Log.e(TAG, "getItemViewType data is null");
+            KLog.e(TAG, "getItemViewType data is null");
         }
 
         return -1;
@@ -271,9 +271,9 @@ public class ScrollerRecyclerViewAdapter extends RecyclerView.Adapter<ScrollerRe
 
     @Override
     public int getItemCount() {
-//        Log.d(TAG, "getItemCount id:" + mScrollerImp.mScroller.getId());
+//        KLog.d(TAG, "getItemCount id:" + mScrollerImp.mScroller.getId());
         if (null != mData) {
-//            Log.d(TAG, "getItemCount:" + mData.length());
+//            KLog.d(TAG, "getItemCount:" + mData.length());
             return mData.length();
         }
         return 0;

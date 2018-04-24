@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.loader;
 
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.Common;
 import com.tmall.wireless.vaf.framework.VafContext;
@@ -81,10 +81,10 @@ public class BinaryLoader {
 
             fin.close();
         } catch (FileNotFoundException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         } catch (IOException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         }
 
@@ -154,10 +154,10 @@ public class BinaryLoader {
                                 if (null != mStringLoader) {
                                     result = mStringLoader.loadFromBuffer(reader, pageId);
                                 } else {
-                                    Log.e(TAG, "mStringManager is null");
+                                    KLog.e(TAG, "mStringManager is null");
                                 }
                             } else {
-                                Log.e(TAG, "string pos error:" + strStartPos + "  read pos:" + reader.getPos());
+                                KLog.e(TAG, "string pos error:" + strStartPos + "  read pos:" + reader.getPos());
                             }
 
                             // parse expr
@@ -165,16 +165,16 @@ public class BinaryLoader {
                                 if (null != mExprCodeLoader) {
                                     result = mExprCodeLoader.loadFromBuffer(reader, pageId);
                                 } else {
-                                    Log.e(TAG, "mExprCodeStore is null");
+                                    KLog.e(TAG, "mExprCodeStore is null");
                                 }
                             } else {
-                                Log.e(TAG, "expr pos error:" + exprCodeStartPos + "  read pos:" + reader.getPos());
+                                KLog.e(TAG, "expr pos error:" + exprCodeStartPos + "  read pos:" + reader.getPos());
                             }
 
                             // load extra data
                             if (reader.getPos() == extraStartPos) {
                             } else {
-                                Log.e(TAG, "extra pos error:" + extraStartPos + "  read pos:" + reader.getPos());
+                                KLog.e(TAG, "extra pos error:" + extraStartPos + "  read pos:" + reader.getPos());
                             }
 
                             if (result) {
@@ -182,16 +182,16 @@ public class BinaryLoader {
                             }
                         }
                     } else {
-                        Log.e(TAG, "version dismatch");
+                        KLog.e(TAG, "version dismatch");
                     }
                 } else {
-                    Log.e(TAG, "loadFromBuffer failed tag is invalidate:" + tag);
+                    KLog.e(TAG, "loadFromBuffer failed tag is invalidate:" + tag);
                 }
             } else {
-                Log.e(TAG, "file len invalidate:" + buf.length);
+                KLog.e(TAG, "file len invalidate:" + buf.length);
             }
         } else {
-            Log.e(TAG, "buf is null");
+            KLog.e(TAG, "buf is null");
         }
         return ret;
     }

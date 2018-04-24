@@ -252,7 +252,7 @@ public class FlexLayout extends Layout {
 
     @Override
     public void onComMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-//        Log.d(TAG, "onComMeasure");
+//        KLog.d(TAG, "onComMeasure");
         if (isOrderChangedFromLastMeasurement()) {
             mReorderedIndices = createReorderedIndices();
         }
@@ -1363,7 +1363,7 @@ public class FlexLayout extends Layout {
 
     @Override
     public void onComLayout(boolean changed, int left, int top, int right, int bottom) {
-//        Log.d(TAG, "onComLayout: changed:" + changed + "  left:" + left + "  top:" + top + "  right:" + right + "  bottom:" + bottom);
+//        KLog.d(TAG, "onComLayout: changed:" + changed + "  left:" + left + "  top:" + top + "  right:" + right + "  bottom:" + bottom);
 //        int layoutDirection = ViewCompat.getLayoutDirection(this);
         boolean isRtl = false;
         switch (mFlexDirection) {
@@ -1397,7 +1397,7 @@ public class FlexLayout extends Layout {
 
     private void layoutVertical(boolean isRtl, boolean fromBottomToTop, int left, int top,
                                 int right, int bottom) {
-//        Log.d(TAG, "layoutVertical id:" + this.getId());
+//        KLog.d(TAG, "layoutVertical id:" + this.getId());
         int paddingTop = getComPaddingTop();
         int paddingBottom = getComPaddingBottom();
 
@@ -1504,7 +1504,7 @@ public class FlexLayout extends Layout {
                                 childLeft, Math.round(childBottom) - child.getComMeasuredHeight(),
                                 childLeft + child.getComMeasuredWidth(), Math.round(childBottom));
                     } else {
-//                        Log.d(TAG, "layout vertical child:" + child.getId());
+//                        KLog.d(TAG, "layout vertical child:" + child.getId());
                         layoutSingleChildVertical(child, flexLine, false, mAlignItems,
                                 childLeft, Math.round(childTop),
                                 childLeft + child.getComMeasuredWidth(),
@@ -1527,7 +1527,7 @@ public class FlexLayout extends Layout {
 
     private void layoutSingleChildVertical(ViewBase view, FlexLine flexLine, boolean isRtl,
                                            int alignItems, int left, int top, int right, int bottom) {
-//        Log.d(TAG, "layoutSingleChildVertical left:" + left + "  top:" + top);
+//        KLog.d(TAG, "layoutSingleChildVertical left:" + left + "  top:" + top);
         Params lp = (Params) view.getComLayoutParams();
         if (lp.alignSelf != Params.ALIGN_SELF_AUTO) {
             // Expecting the values for alignItems and alignSelf match except for ALIGN_SELF_AUTO.
@@ -1681,7 +1681,7 @@ public class FlexLayout extends Layout {
                                 Math.round(childRight) - child.getComMeasuredWidth(), childTop,
                                 Math.round(childRight), childTop + child.getComMeasuredHeight());
                     } else {
-//                        Log.d(TAG, "layout child id:" + child.getId());
+//                        KLog.d(TAG, "layout child id:" + child.getId());
                         layoutSingleChildHorizontal(child, flexLine, mFlexWrap, mAlignItems,
                                 Math.round(childLeft), childTop,
                                 Math.round(childLeft) + child.getComMeasuredWidth(),
@@ -1715,7 +1715,7 @@ public class FlexLayout extends Layout {
             case ALIGN_ITEMS_FLEX_START: // Intentional fall through
             case ALIGN_ITEMS_STRETCH:
                 if (flexWrap != FLEX_WRAP_WRAP_REVERSE) {
-//                    Log.d(TAG, "layoutSingleChildHorizontal  left:" + left + "  top:" + top + lp.mLayoutMarginTop + "  right:" + right + "  bottom:" + bottom + lp.mLayoutMarginTop) ;
+//                    KLog.d(TAG, "layoutSingleChildHorizontal  left:" + left + "  top:" + top + lp.mLayoutMarginTop + "  right:" + right + "  bottom:" + bottom + lp.mLayoutMarginTop) ;
                     view.comLayout(left, top + lp.mLayoutMarginTop, right, bottom + lp.mLayoutMarginTop);
                 } else {
                     view.comLayout(left, top - lp.mLayoutMarginBottom, right, bottom - lp.mLayoutMarginBottom);
@@ -1931,7 +1931,7 @@ public class FlexLayout extends Layout {
                 ret = true;
                 switch (key) {
                     case StringBase.STR_ID_flexGrow:
-//                        Log.d(TAG, "flexgrow:" + value);
+//                        KLog.d(TAG, "flexgrow:" + value);
                         flexGrow = value;
                         break;
 

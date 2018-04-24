@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.virtualview.loader;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 /**
  * Created by gujicheng on 16/8/4.
@@ -99,7 +99,7 @@ public class CodeReader {
         if (null != mCode && mCurIndex < mCount) {
             return mCode[mCurIndex++];
         } else {
-            Log.e(TAG, "readByte error mCode:" + mCode + "  mCurIndex:"
+            KLog.e(TAG, "readByte error mCode:" + mCode + "  mCurIndex:"
                     + mCurIndex + "  mCount:" + mCount);
             return -1;
         }
@@ -109,7 +109,7 @@ public class CodeReader {
         if (null != mCode && mCurIndex < mCount - 1) {
             return (short)(((mCode[mCurIndex++] & 0xff) << 8) | (mCode[mCurIndex++] & 0xff));
         } else {
-            Log.e(TAG, "readShort error mCode:" + mCode + "  mCurIndex:"
+            KLog.e(TAG, "readShort error mCode:" + mCode + "  mCurIndex:"
                     + mCurIndex + "  mCount:" + mCount);
             return -1;
         }
@@ -122,7 +122,7 @@ public class CodeReader {
                     ((mCode[mCurIndex++] & 0xff) << 8) |
                     ((mCode[mCurIndex++] & 0xff));
         } else {
-            Log.e(TAG, "readInt error mCode:" + mCode + "  mCurIndex:"
+            KLog.e(TAG, "readInt error mCode:" + mCode + "  mCurIndex:"
                     + mCurIndex + "  mCount:" + mCount);
             return -1;
         }

@@ -26,7 +26,7 @@ package com.tmall.wireless.virtualviewdemo.custom;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.expr.common.StringSupport;
 import com.tmall.wireless.vaf.framework.VafContext;
@@ -57,7 +57,7 @@ public class CustomView extends VirtualViewBase {
     protected void onComDraw(Canvas canvas) {
         super.onComDraw(canvas);
 
-        Log.d(TAG, "onComDraw width:" + mMeasuredWidth + " height:" + mMeasuredHeight);
+        KLog.d(TAG, "onComDraw width:" + mMeasuredWidth + " height:" + mMeasuredHeight);
         canvas.drawRect(0, 0, mMeasuredWidth/2, mMeasuredHeight/2, mPaint);
     }
 
@@ -69,7 +69,7 @@ public class CustomView extends VirtualViewBase {
             ret = true;
             if (key == mPropId) {
                 mProp = mPropId;
-                Log.d(TAG, "set prop value:" + value);
+                KLog.d(TAG, "set prop value:" + value);
             } else {
                 ret = false;
             }

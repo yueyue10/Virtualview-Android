@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.virtualview.layout;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.StringBase;
 import com.libra.virtualview.common.ViewBaseCommon;
@@ -80,7 +80,7 @@ public class VH2Layout extends VHLayout {
                         left = rightStart;
                         rightStart -= childP.mLayoutMarginLeft;
                     } else {
-                        Log.e(TAG, "onComLayout HORIZONTAL direction invalidate:" + childP.mLayoutDirection);
+                        KLog.e(TAG, "onComLayout HORIZONTAL direction invalidate:" + childP.mLayoutDirection);
                     }
 
                     int tt;
@@ -122,7 +122,7 @@ public class VH2Layout extends VHLayout {
                         top = bottomStart;
                         bottomStart -= childP.mLayoutMarginTop;
                     } else {
-                        Log.e(TAG, "onComLayout VERTICAL direction invalidate:" + childP.mLayoutDirection);
+                        KLog.e(TAG, "onComLayout VERTICAL direction invalidate:" + childP.mLayoutDirection);
                     }
 
                     int ll;

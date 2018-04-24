@@ -24,9 +24,11 @@
 
 package com.tmall.wireless.virtualviewdemo;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -39,11 +41,14 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
+
+import com.socks.library.KLog;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Picasso.LoadedFrom;
 import com.squareup.picasso.RequestCreator;
@@ -60,6 +65,8 @@ import com.tmall.wireless.virtualviewdemo.custom.ClickProcessorImpl;
 import com.tmall.wireless.virtualviewdemo.custom.ExposureProcessorImpl;
 import com.tmall.wireless.virtualviewdemo.preview.PreviewActivity;
 import com.tmall.wireless.virtualviewdemo.preview.util.HttpUtil;
+
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -76,13 +83,14 @@ public class LocalPreviewActivity extends PreviewActivity {
     private VafContext mVafContext;
 
     private ViewManager mViewManager;
+    private static final String PLAY_DATA = "component_demo/virtualview.json";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         verifyStoragePermissions(this);
         setContentView(R.layout.activity_component);
-        mLinearLayout = (LinearLayout)findViewById(R.id.container);
+        mLinearLayout = (LinearLayout) findViewById(R.id.container);
         initForPreview();
         handlePreviewIntent(getIntent());
     }
@@ -124,9 +132,9 @@ public class LocalPreviewActivity extends PreviewActivity {
         }
         mViewManager.loadBinBufferSync(data, true);
         mLinearLayout.removeAllViews();
-        View container = ((VirtualViewApplication)getApplication()).getVafContext().getContainerService().getContainer(
-            name, true);
-        IContainer iContainer = (IContainer)container;
+        View container = ((VirtualViewApplication) getApplication()).getVafContext().getContainerService().getContainer(
+                name, true);
+        IContainer iContainer = (IContainer) container;
         Layout.Params p = iContainer.getVirtualView().getComLayoutParams();
         LinearLayout.LayoutParams marginLayoutParams = new LinearLayout.LayoutParams(p.mLayoutWidth, p.mLayoutHeight);
         marginLayoutParams.leftMargin = p.mLayoutMarginLeft;
@@ -134,7 +142,9 @@ public class LocalPreviewActivity extends PreviewActivity {
         marginLayoutParams.rightMargin = p.mLayoutMarginRight;
         marginLayoutParams.bottomMargin = p.mLayoutMarginBottom;
         mLinearLayout.addView(container, marginLayoutParams);
-        iContainer.getVirtualView().setVData(new JSONObject());
+        JSONObject json = getJSONDataFromAsset(PLAY_DATA);
+        if (json != null)
+            iContainer.getVirtualView().setVData(json);
     }
 
     private void initForPreview() {
@@ -147,7 +157,7 @@ public class LocalPreviewActivity extends PreviewActivity {
                 @Override
                 public void bindImage(String uri, final ImageBase imageBase, int reqWidth, int reqHeight) {
                     RequestCreator requestCreator = Picasso.with(LocalPreviewActivity.this).load(uri);
-                    Log.d("LocalPreviewActivity", "bindImage request width height " + reqHeight + " " + reqWidth);
+                    KLog.d("LocalPreviewActivity", "bindImage request width height " + reqHeight + " " + reqWidth);
                     if (reqHeight > 0 || reqWidth > 0) {
                         requestCreator.resize(reqWidth, reqHeight);
                     }
@@ -159,7 +169,7 @@ public class LocalPreviewActivity extends PreviewActivity {
                 @Override
                 public void getBitmap(String uri, int reqWidth, int reqHeight, final Listener lis) {
                     RequestCreator requestCreator = Picasso.with(LocalPreviewActivity.this).load(uri);
-                    Log.d("LocalPreviewActivity", "getBitmap request width height " + reqHeight + " " + reqWidth);
+                    KLog.d("LocalPreviewActivity", "getBitmap request width height " + reqHeight + " " + reqWidth);
                     if (reqHeight > 0 || reqWidth > 0) {
                         requestCreator.resize(reqWidth, reqHeight);
                     }
@@ -177,13 +187,13 @@ public class LocalPreviewActivity extends PreviewActivity {
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
-        "android.permission.READ_EXTERNAL_STORAGE",
-        "android.permission.WRITE_EXTERNAL_STORAGE"};
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.WRITE_EXTERNAL_STORAGE"};
 
     public static void verifyStoragePermissions(Activity activity) {
         try {
             int permission = ActivityCompat.checkSelfPermission(activity,
-                "android.permission.WRITE_EXTERNAL_STORAGE");
+                    "android.permission.WRITE_EXTERNAL_STORAGE");
             if (permission != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
             }
@@ -212,7 +222,7 @@ public class LocalPreviewActivity extends PreviewActivity {
             if (mListener != null) {
                 mListener.onImageLoadSuccess(bitmap);
             }
-            Log.d("LocalPreviewActivity", "onBitmapLoaded " + from);
+            KLog.d("LocalPreviewActivity", "onBitmapLoaded " + from);
         }
 
         @Override
@@ -220,12 +230,12 @@ public class LocalPreviewActivity extends PreviewActivity {
             if (mListener != null) {
                 mListener.onImageLoadFailed();
             }
-            Log.d("LocalPreviewActivity", "onBitmapFailed ");
+            KLog.d("LocalPreviewActivity", "onBitmapFailed ");
         }
 
         @Override
         public void onPrepareLoad(Drawable placeHolderDrawable) {
-            Log.d("LocalPreviewActivity", "onPrepareLoad ");
+            KLog.d("LocalPreviewActivity", "onPrepareLoad ");
         }
     }
 
@@ -238,6 +248,25 @@ public class LocalPreviewActivity extends PreviewActivity {
             inputStream.close();
             return buf;
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private JSONObject getJSONDataFromAsset(String name) {
+        try {
+            InputStream inputStream = getAssets().open(name);
+            BufferedReader inputStreamReader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder sb = new StringBuilder();
+            String str;
+            while ((str = inputStreamReader.readLine()) != null) {
+                sb.append(str);
+            }
+            inputStreamReader.close();
+            return new JSONObject(sb.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
             e.printStackTrace();
         }
         return null;

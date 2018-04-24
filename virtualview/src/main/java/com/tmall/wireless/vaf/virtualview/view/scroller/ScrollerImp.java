@@ -28,7 +28,7 @@ import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -76,10 +76,10 @@ public class ScrollerImp extends RecyclerView implements IView, IContainer {
 //                IContainer container = (IContainer)holder.itemView;
                 ViewBase view = ((ScrollerRecyclerViewAdapter.MyViewHolder) holder).mViewBase;
                 if (null != view) {
-//                    Log.d(TAG, "onViewRecycled id:" + view.getId());
+//                    KLog.d(TAG, "onViewRecycled id:" + view.getId());
                     view.reset();
                 } else {
-                    Log.e(TAG, "recycled failed:" + view);
+                    KLog.e(TAG, "recycled failed:" + view);
                 }
             }
         });
@@ -100,7 +100,7 @@ public class ScrollerImp extends RecyclerView implements IView, IContainer {
                     break;
 
                 default:
-                    Log.e(TAG, "mode invalidate:" + mode);
+                    KLog.e(TAG, "mode invalidate:" + mode);
                     break;
             }
             setLayoutManager(mLM);
@@ -249,9 +249,9 @@ public class ScrollerImp extends RecyclerView implements IView, IContainer {
                 if (!mStickied) {
                     View v = ScrollerImp.this.findChildViewUnder(0, 0);
                     int pos = (Integer) v.getTag();
-//                Log.d(TAG, "pre pos:" + pos + "  stickyPos:" + stickyPos);
+//                KLog.d(TAG, "pre pos:" + pos + "  stickyPos:" + stickyPos);
                     if (pos >= stickyPos) {
-//                    Log.d(TAG, "do sticky");
+//                    KLog.d(TAG, "do sticky");
                         mStickied = true;
 
                         ViewGroup vg = mAdapter.getStickyView();
@@ -270,7 +270,7 @@ public class ScrollerImp extends RecyclerView implements IView, IContainer {
                 } else {
                     View v = ScrollerImp.this.findChildViewUnder(0, mStickiedItemHeight);
                     int pos = (Integer) v.getTag();
-//                Log.d(TAG, "post pos:" + pos + "  stickyPos:" + stickyPos);
+//                KLog.d(TAG, "post pos:" + pos + "  stickyPos:" + stickyPos);
                     if (pos <= stickyPos) {
                         mStickied = false;
 
@@ -279,7 +279,7 @@ public class ScrollerImp extends RecyclerView implements IView, IContainer {
                         ViewGroup vg = mAdapter.getStickyView();
                         vg.addView(mStickView, vg.getMeasuredWidth(), vg.getMeasuredHeight());
                         //
-//                    Log.d(TAG, "cancel sticky");
+//                    KLog.d(TAG, "cancel sticky");
                     }
                 }
             }

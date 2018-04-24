@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.expr.common.ExprCode;
 import com.libra.expr.common.StringSupport;
@@ -153,26 +153,26 @@ public class ExprEngine {
         if (null != code) {
             cr.setCode(code);
 
-//            Log.d(TAG, "execute code:" + code);
+//            KLog.d(TAG, "execute code:" + code);
             int exeRlt = Executor.RESULT_STATE_ERROR;
             do {
                 byte opCode = cr.readByte();
-//                Log.d(TAG, "opCode:" + opCode + "  curPos:" + mCodeReader.curPos());
+//                KLog.d(TAG, "opCode:" + opCode + "  curPos:" + mCodeReader.curPos());
                 if (opCode > -1 && opCode < mInstructionCount) {
                     Executor executor = mExecutors.get(opCode);
-//                    Log.d(TAG, "init:");
+//                    KLog.d(TAG, "init:");
                     executor.init();
-//                    Log.d(TAG, "exe:");
+//                    KLog.d(TAG, "exe:");
                     exeRlt = executor.execute(obj);
-//                    Log.d(TAG, "exe end:" + exeRlt);
+//                    KLog.d(TAG, "exe end:" + exeRlt);
                 } else {
-                    Log.e(TAG, "operator code error:" + opCode);
+                    KLog.e(TAG, "operator code error:" + opCode);
                     break;
                 }
-//                Log.d(TAG, "isEndOfCode:" + mCodeReader.isEndOfCode());
+//                KLog.d(TAG, "isEndOfCode:" + mCodeReader.isEndOfCode());
             } while (Executor.RESULT_STATE_SUCCESSFUL == exeRlt && !cr.isEndOfCode());
 
-//            Log.d(TAG, "end execute");
+//            KLog.d(TAG, "end execute");
             if (Executor.RESULT_STATE_SUCCESSFUL == exeRlt) {
                 ret = true;
             }

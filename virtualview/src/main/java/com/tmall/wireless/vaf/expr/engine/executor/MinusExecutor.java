@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 
@@ -39,7 +39,7 @@ public class MinusExecutor extends ArithExecutor {
         int ret = super.execute(com);
 
         byte type = mCodeReader.readByte();
-//        Log.d(TAG, "execute type:" + type);
+//        KLog.d(TAG, "execute type:" + type);
 
         Data data = readData(type);
         if (TYPE_Var == type) {
@@ -60,11 +60,11 @@ public class MinusExecutor extends ArithExecutor {
 
                 default:
                     ret = RESULT_STATE_ERROR;
-                    Log.e(TAG, "invalidate type:" + data.mType);
+                    KLog.e(TAG, "invalidate type:" + data.mType);
                     break;
             }
         } else {
-            Log.e(TAG, "read data failed");
+            KLog.e(TAG, "read data failed");
         }
 
         return ret;

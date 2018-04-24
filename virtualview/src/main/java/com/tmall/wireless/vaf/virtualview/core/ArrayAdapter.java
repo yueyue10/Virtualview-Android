@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import android.support.v4.util.ArrayMap;
 import android.support.v4.util.SparseArrayCompat;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 
 import com.tmall.wireless.vaf.framework.VafContext;
@@ -62,7 +62,7 @@ public class ArrayAdapter extends Adapter {
         } else if (str instanceof JSONArray) {
             mData = (JSONArray) str;
         } else {
-            Log.e(TAG, "setData failed:" + str);
+            KLog.e(TAG, "setData failed:" + str);
         }
     }
 
@@ -112,7 +112,7 @@ public class ArrayAdapter extends Adapter {
 
                 vb.ready();
             } else {
-                Log.e(TAG, "failed");
+                KLog.e(TAG, "failed");
             }
 
         } catch (JSONException e) {

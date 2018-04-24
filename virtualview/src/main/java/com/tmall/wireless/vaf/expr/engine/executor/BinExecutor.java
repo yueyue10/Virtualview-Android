@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.ExprCommon;
 import com.tmall.wireless.vaf.expr.engine.data.Data;
@@ -40,7 +40,7 @@ public abstract class BinExecutor extends ArithExecutor {
         int ret = super.execute(com);
 
         byte funCode = mCodeReader.readByte();
-//        Log.d(TAG, "execute funCode:" + funCode);
+//        KLog.d(TAG, "execute funCode:" + funCode);
         Data data1 = null, data2 = null;
         switch (funCode) {
             case ExprCommon.VAR_VAR:
@@ -90,7 +90,7 @@ public abstract class BinExecutor extends ArithExecutor {
 
             case ExprCommon.STR_VAR:
                 data1 = readData(TYPE_String);
-//                Log.d(TAG, "data1:" + data1);
+//                KLog.d(TAG, "data1:" + data1);
                 data2 = readData(TYPE_Var);
                 mAriResultRegIndex = mCodeReader.readByte();
                 break;
@@ -124,7 +124,7 @@ public abstract class BinExecutor extends ArithExecutor {
         if (null != data1 && null != data2) {
             ret = calc(data1, data2);
         } else {
-            Log.e(TAG, "read data failed");
+            KLog.e(TAG, "read data failed");
         }
 
         return ret;
@@ -187,7 +187,7 @@ public abstract class BinExecutor extends ArithExecutor {
                             ret = calcIntString(result, value1.getInt(), value2.getString());
                             break;
                         default:
-                            Log.e(TAG, "value2 invalidate type:" + value2);
+                            KLog.e(TAG, "value2 invalidate type:" + value2);
                             break;
                     }
                     break;
@@ -204,7 +204,7 @@ public abstract class BinExecutor extends ArithExecutor {
                             ret = calcFloatString(result, value1.getFloat(), value2.getString());
                             break;
                         default:
-                            Log.e(TAG, "value2 invalidate type:" + value2);
+                            KLog.e(TAG, "value2 invalidate type:" + value2);
                             break;
                     }
                     break;
@@ -221,18 +221,18 @@ public abstract class BinExecutor extends ArithExecutor {
                             ret = calcStringString(result, value1.getString(), value2.getString());
                             break;
                         default:
-                            Log.e(TAG, "value2 invalidate type:" + value2);
+                            KLog.e(TAG, "value2 invalidate type:" + value2);
                             break;
                     }
                     break;
 
                 default:
-                    Log.e(TAG, "value1 invalidate type:" + value1);
+                    KLog.e(TAG, "value1 invalidate type:" + value1);
                     break;
             }
 
             if (RESULT_STATE_ERROR == ret) {
-                Log.e(TAG, "type invalidate data1:" + value1 + "  data2:" + value2);
+                KLog.e(TAG, "type invalidate data1:" + value1 + "  data2:" + value2);
             }
         }
 

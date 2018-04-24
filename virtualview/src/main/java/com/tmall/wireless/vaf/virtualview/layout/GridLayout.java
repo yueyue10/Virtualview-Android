@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.virtualview.layout;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 
 import android.view.View.MeasureSpec;
@@ -129,7 +129,7 @@ public class GridLayout extends Layout {
         } else if (View.MeasureSpec.EXACTLY == mode) {
             ret = size;
         } else {
-            Log.e(TAG, "getRealWidth error mode:" + mode);
+            KLog.e(TAG, "getRealWidth error mode:" + mode);
         }
 
         return ret;

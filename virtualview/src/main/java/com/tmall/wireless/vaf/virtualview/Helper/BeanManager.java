@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.Helper;
 
 import android.support.v4.util.ArrayMap;
-import android.util.Log;
+import com.socks.library.KLog;
 import com.libra.TextUtils;
 import com.tmall.wireless.vaf.virtualview.core.IBean;
 
@@ -46,7 +46,7 @@ public class BeanManager {
         if (null != processor && !TextUtils.isEmpty(type)) {
             mBeanArrayMap.put(type, processor);
         } else {
-            Log.e(TAG, "register failed type:" + type + "  processor:" + processor);
+            KLog.e(TAG, "register failed type:" + type + "  processor:" + processor);
         }
     }
 
@@ -54,7 +54,7 @@ public class BeanManager {
         if (null != processor && !TextUtils.isEmpty(type)) {
             mBeanArrayMap.remove(type);
         } else {
-            Log.e(TAG, "unregister failed type:" + type + "  processor:" + processor);
+            KLog.e(TAG, "unregister failed type:" + type + "  processor:" + processor);
         }
     }
 

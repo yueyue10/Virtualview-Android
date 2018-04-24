@@ -30,7 +30,7 @@ import java.util.HashMap;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import com.libra.Utils;
 import com.libra.expr.common.StringSupport;
@@ -120,20 +120,20 @@ public class TotalContainer extends NativeViewBase {
                     mNative = (IViewInterface) obj;
                     __mNative = (View)mNative;
                 } else {
-                    Log.e(TAG, mClass + " is not total view interface");
+                    KLog.e(TAG, mClass + " is not total view interface");
                 }
             }
         } catch (InstantiationException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         } catch (IllegalAccessException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         } catch (NoSuchMethodException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         } catch (InvocationTargetException e) {
-            Log.e(TAG, "error:" + e);
+            KLog.e(TAG, "error:" + e);
             e.printStackTrace();
         }
     }

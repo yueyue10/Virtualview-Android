@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.virtualview.core.ViewBase;
 
@@ -40,7 +40,7 @@ public class JmpExecutor extends ArithExecutor {
 
         int jmpPos = mCodeReader.readInt();
 
-//        Log.d(TAG, "jmp pos:" + jmpPos);
+//        KLog.d(TAG, "jmp pos:" + jmpPos);
         mCodeReader.setPos(jmpPos);
 
         return RESULT_STATE_SUCCESSFUL;

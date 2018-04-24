@@ -26,7 +26,7 @@ package com.tmall.wireless.vaf.virtualview.view.page;
 
 import android.graphics.Bitmap;
 import android.support.annotation.Keep;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import com.libra.expr.common.ExprCode;
 import com.libra.virtualview.common.StringBase;
@@ -97,7 +97,7 @@ public class Page extends NativeViewBase implements PageView.Listener {
                 }
                 if (null != engine && engine.execute(this, mPageFlipCode)) {
                 } else {
-                    Log.e(TAG, "callPageFlip execute failed");
+                    KLog.e(TAG, "callPageFlip execute failed");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -233,7 +233,7 @@ public class Page extends NativeViewBase implements PageView.Listener {
 
     @Keep
     public void onScroll(int curPos) {
-        Log.d(TAG, "page scroll " + curPos);
+        KLog.d(TAG, "page scroll " + curPos);
     }
 
     private void callBean() {

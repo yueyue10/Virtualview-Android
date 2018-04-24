@@ -30,7 +30,7 @@ import android.animation.TimeInterpolator;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -335,7 +335,7 @@ public class PageView extends ViewGroup {
         View itemView = null;
         int childCount = getChildCount();
         if (childCount == 0 || index >= childCount) {
-            Log.d(TAG, "childCount == 0 or index >= childCount should not happen here");
+            KLog.d(TAG, "childCount == 0 or index >= childCount should not happen here");
             return;
         }
         if (index == -1) {
@@ -345,7 +345,7 @@ public class PageView extends ViewGroup {
         }
         ViewHolder vh = (ViewHolder)itemView.getTag();
         if (vh == null) {
-            Log.d(TAG, "view holder == null, should not happen ");
+            KLog.d(TAG, "view holder == null, should not happen ");
             return;
         }
         mAdapter.onBindViewHolder(vh, pos);

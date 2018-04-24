@@ -29,7 +29,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import android.view.ViewDebug;
 
@@ -123,7 +123,7 @@ public class ViewServer implements Runnable {
     private static final String BUILD_TYPE_USER = "user";
 
     // Debug facility
-    private static final String LOG_TAG = "ViewServer";
+    private static final String KLog_TAG = "ViewServer";
 
     private static final String VALUE_PROTOCOL_VERSION = "4";
     private static final String VALUE_SERVER_VERSION = "4";
@@ -182,7 +182,7 @@ public class ViewServer implements Runnable {
                 try {
                     sServer.start();
                 } catch (IOException e) {
-                    Log.d(LOG_TAG, "Error:", e);
+                    KLog.d(KLog_TAG, "Error:", e);
                 }
             }
         } else {
@@ -248,7 +248,7 @@ public class ViewServer implements Runnable {
                 try {
                     mThreadPool.shutdownNow();
                 } catch (SecurityException e) {
-                    Log.w(LOG_TAG, "Could not stop all view server threads");
+                    KLog.w(KLog_TAG, "Could not stop all view server threads");
                 }
             }
 
@@ -260,7 +260,7 @@ public class ViewServer implements Runnable {
                 mServer = null;
                 return true;
             } catch (IOException e) {
-                Log.w(LOG_TAG, "Could not close the view server");
+                KLog.w(KLog_TAG, "Could not close the view server");
             }
         }
 
@@ -393,7 +393,7 @@ public class ViewServer implements Runnable {
         try {
             mServer = new ServerSocket(mPort, VIEW_SERVER_MAX_CONNECTIONS, InetAddress.getLocalHost());
         } catch (Exception e) {
-            Log.w(LOG_TAG, "Starting ServerSocket error: ", e);
+            KLog.w(KLog_TAG, "Starting ServerSocket error: ", e);
         }
 
         while (mServer != null && Thread.currentThread() == mThread) {
@@ -410,7 +410,7 @@ public class ViewServer implements Runnable {
                     }
                 }
             } catch (Exception e) {
-                Log.w(LOG_TAG, "Connection error: ", e);
+                KLog.w(KLog_TAG, "Connection error: ", e);
             }
         }
     }
@@ -603,10 +603,10 @@ public class ViewServer implements Runnable {
                 }
 
                 if (!result) {
-                    Log.w(LOG_TAG, "An error occurred with the command: " + command);
+                    KLog.w(KLog_TAG, "An error occurred with the command: " + command);
                 }
             } catch(IOException e) {
-                Log.w(LOG_TAG, "Connection error: ", e);
+                KLog.w(KLog_TAG, "Connection error: ", e);
             } finally {
                 if (in != null) {
                     try {
@@ -665,7 +665,7 @@ public class ViewServer implements Runnable {
                 }
 
             } catch (Exception e) {
-                Log.w(LOG_TAG, "Could not send command " + command +
+                KLog.w(KLog_TAG, "Could not send command " + command +
                         " with parameters " + parameters, e);
                 success = false;
             } finally {
@@ -836,7 +836,7 @@ public class ViewServer implements Runnable {
                     }
                 }
             } catch (Exception e) {
-                Log.w(LOG_TAG, "Connection error: ", e);
+                KLog.w(KLog_TAG, "Connection error: ", e);
             } finally {
                 if (out != null) {
                     try {

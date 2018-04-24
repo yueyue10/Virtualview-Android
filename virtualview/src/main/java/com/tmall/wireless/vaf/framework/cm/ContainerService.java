@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.framework.cm;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -66,7 +66,7 @@ public class ContainerService {
         if (null != cm && containerID >= 0 && containerID < MAX_CONTAINER_MRG_COUNT) {
             mContainerMrg.add(containerID, cm);
         } else {
-            Log.e(TAG, "param invalidate containerID:" + containerID);
+            KLog.e(TAG, "param invalidate containerID:" + containerID);
         }
     }
 
@@ -106,7 +106,7 @@ public class ContainerService {
                     } else {
                     }
                 } else {
-                    Log.e(TAG, "recycle viewbase is null");
+                    KLog.e(TAG, "recycle viewbase is null");
                 }
             }
 
@@ -116,7 +116,7 @@ public class ContainerService {
                 if (null != cm) {
                     cm.recycle(container);
                 } else {
-                    Log.e(TAG, "recycle container type is invalidate:" + container.getType());
+                    KLog.e(TAG, "recycle container type is invalidate:" + container.getType());
                 }
             }
         }
@@ -154,7 +154,7 @@ public class ContainerService {
             if (null != cm) {
                 container = cm.getContainer(mAppContext);
             } else {
-                Log.e(TAG, "getContainer type invalidate:" + containerType);
+                KLog.e(TAG, "getContainer type invalidate:" + containerType);
             }
         }
 

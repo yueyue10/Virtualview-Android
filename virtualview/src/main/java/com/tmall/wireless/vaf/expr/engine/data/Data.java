@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.data;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import static com.tmall.wireless.vaf.expr.engine.executor.ArithExecutor.TYPE_String;
 
@@ -174,7 +174,7 @@ public class Data {
                 mValue = data.mValue.clone();
             }
         } else {
-            Log.e(TAG, "copy failed");
+            KLog.e(TAG, "copy failed");
         }
     }
 

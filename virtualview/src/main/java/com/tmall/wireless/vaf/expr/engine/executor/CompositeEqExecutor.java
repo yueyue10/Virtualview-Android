@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 
@@ -73,7 +73,7 @@ public class CompositeEqExecutor extends EqualExecutor {
     protected int eqDeal(Data resultReg, Data data2) {
         int ret = RESULT_STATE_ERROR;
 
-//        Log.d(TAG, "eqDeal obj count" + mMyObjs.size());
+//        KLog.d(TAG, "eqDeal obj count" + mMyObjs.size());
 //        NativeObjectManager cm = mAppContext.getNativeObjectManager();
         if (mMyObjs.size() > 0) {
             for (Object obj : mMyObjs) {
@@ -117,22 +117,22 @@ public class CompositeEqExecutor extends EqualExecutor {
                                 break;
                         }
                     } else {
-                        Log.e(TAG, "var type invalidate:" + result);
+                        KLog.e(TAG, "var type invalidate:" + result);
                     }
 
                     if (null != o) {
-//                        Log.d(TAG, "set value:" + o);
+//                        KLog.d(TAG, "set value:" + o);
                         mNativeObjectManager.setPropertyImp(obj, mPropertyNameId, o);
                     } else {
-                        Log.e(TAG, "calc failed");
+                        KLog.e(TAG, "calc failed");
                     }
                 } else {
-                    Log.e(TAG, "result value is empty:" + result);
+                    KLog.e(TAG, "result value is empty:" + result);
                 }
             }
             ret = RESULT_STATE_SUCCESSFUL;
         } else {
-            Log.e(TAG, "obj is empty");
+            KLog.e(TAG, "obj is empty");
         }
 
         return ret;

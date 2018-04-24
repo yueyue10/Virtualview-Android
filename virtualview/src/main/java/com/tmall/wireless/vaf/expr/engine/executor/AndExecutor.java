@@ -36,7 +36,7 @@ public class AndExecutor extends BinExecutor {
     @Override
     protected int calcIntInt(Data result, int l, int r) {
         result.setInt((1 == l && 1 == r) ? 1 : 0);
-//        Log.d(TAG, "calcIntInt l:" + l + "  r:" + r);
+//        KLog.d(TAG, "calcIntInt l:" + l + "  r:" + r);
         return RESULT_STATE_SUCCESSFUL;
     }
 }

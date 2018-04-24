@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.expr.engine.executor;
 
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 
@@ -48,7 +48,7 @@ public class TerExecutor extends ArithExecutor {
         Data data2 = readData(type2);
         Data data3 = readData(type3);
 
-//        Log.d(TAG, "data1:" + data1 + " + data2:" + data2 + " + data3:" + data3);
+//        KLog.d(TAG, "data1:" + data1 + " + data2:" + data2 + " + data3:" + data3);
 
         if (TYPE_Register != type1 && TYPE_Register != type2 && TYPE_Register != type3) {
             mAriResultRegIndex = mCodeReader.readByte();
@@ -86,7 +86,7 @@ public class TerExecutor extends ArithExecutor {
                     break;
 
                 default:
-                    Log.e(TAG, "type error:" + type1);
+                    KLog.e(TAG, "type error:" + type1);
                     ret = RESULT_STATE_ERROR;
                     break;
             }

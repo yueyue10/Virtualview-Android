@@ -26,7 +26,7 @@ package com.tmall.wireless.virtualviewdemo.page;
 
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -51,7 +51,7 @@ public class Page extends VafContext {
     }
 
     public boolean onCreate(ViewGroup root, String binPath) {
-        Log.d(TAG, "onCreate");
+        KLog.d(TAG, "onCreate");
         boolean ret = false;
 
         mRootView = root;
@@ -83,7 +83,7 @@ public class Page extends VafContext {
 
     @Override
     public void onDestroy() {
-        Log.d(TAG, "onDestroy");
+        KLog.d(TAG, "onDestroy");
         super.onDestroy();
 
         for (IContainer container : mRootContainers) {

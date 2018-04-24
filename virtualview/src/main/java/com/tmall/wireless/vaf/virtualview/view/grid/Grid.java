@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.view.grid;
 
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 
 import com.libra.Utils;
@@ -116,17 +116,17 @@ public class Grid extends NativeViewBase {
 
                             vb.ready();
                         } else {
-                            Log.e(TAG, "create view failed");
+                            KLog.e(TAG, "create view failed");
                         }
                     } else {
-                        Log.e(TAG, "get type failed");
+                        KLog.e(TAG, "get type failed");
                     }
                 } catch (JSONException e) {
-                    Log.e(TAG, "get json object failed:" + e);
+                    KLog.e(TAG, "get json object failed:" + e);
                 }
             }
         } else {
-            Log.e(TAG, "setData not array");
+            KLog.e(TAG, "setData not array");
         }
     }
 

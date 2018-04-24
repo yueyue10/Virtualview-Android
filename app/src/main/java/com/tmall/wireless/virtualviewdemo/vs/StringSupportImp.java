@@ -27,7 +27,7 @@ package com.tmall.wireless.virtualviewdemo.vs;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import com.libra.expr.common.StringSupport;
 import com.libra.virtualview.common.StringBase;
 import com.tmall.wireless.vaf.virtualview.loader.CodeReader;
@@ -75,7 +75,7 @@ public class StringSupportImp extends StringBase implements StringSupport {
         if (mIndex2String.containsKey(id)) {
             return mIndex2String.get(id);
         }
-        Log.e(TAG, "getString null:" + id);
+        KLog.e(TAG, "getString null:" + id);
         return null;
     }
 

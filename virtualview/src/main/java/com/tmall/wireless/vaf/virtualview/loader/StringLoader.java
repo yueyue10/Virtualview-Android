@@ -27,7 +27,7 @@ package com.tmall.wireless.vaf.virtualview.loader;
 import java.util.Map;
 
 import android.support.v4.util.ArrayMap;
-import android.util.Log;
+import com.socks.library.KLog;
 import com.libra.TextUtils;
 import com.libra.expr.common.StringSupport;
 import com.libra.virtualview.common.StringBase;
@@ -93,7 +93,7 @@ public class StringLoader extends StringBase implements StringSupport {
                 mString2Index.put(str, id);
                 reader.seekBy(len);
             } else {
-                Log.e(TAG, "read string over");
+                KLog.e(TAG, "read string over");
                 ret = false;
                 break;
             }
@@ -110,7 +110,7 @@ public class StringLoader extends StringBase implements StringSupport {
         if (mIndex2String.containsKey(id)) {
             return mIndex2String.get(id);
         }
-        Log.e(TAG, "getString null:" + id);
+        KLog.e(TAG, "getString null:" + id);
         return null;
     }
 

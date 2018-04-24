@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.expr.engine.executor;
 
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 import com.tmall.wireless.vaf.virtualview.core.ViewBase;
@@ -50,7 +50,7 @@ public class JmpcExecutor extends ArithExecutor {
             case Data.TYPE_INT:
                 if (d.getInt() <= 0 ) {
                     // jmp
-//                    Log.d(TAG, "jmpc int pos:" + jmpPos);
+//                    KLog.d(TAG, "jmpc int pos:" + jmpPos);
                     mCodeReader.setPos(jmpPos);
                 }
                 break;
@@ -58,7 +58,7 @@ public class JmpcExecutor extends ArithExecutor {
             case Data.TYPE_FLOAT:
                 if (d.getFloat() <= 0 ) {
                     // jmp
-//                    Log.d(TAG, "jmpc float pos:" + jmpPos);
+//                    KLog.d(TAG, "jmpc float pos:" + jmpPos);
                     mCodeReader.setPos(jmpPos);
                 }
                 break;
@@ -66,7 +66,7 @@ public class JmpcExecutor extends ArithExecutor {
             case Data.TYPE_STR:
                 if (TextUtils.isEmpty(d.getString())) {
                     // jmp
-//                    Log.d(TAG, "jmpc str pos:" + jmpPos);
+//                    KLog.d(TAG, "jmpc str pos:" + jmpPos);
                     mCodeReader.setPos(jmpPos);
                 }
                 break;
@@ -74,13 +74,13 @@ public class JmpcExecutor extends ArithExecutor {
             case Data.TYPE_OBJECT:
                 if (null == d.getObject()) {
                     // jmp
-//                    Log.d(TAG, "jmpc obj pos:" + jmpPos);
+//                    KLog.d(TAG, "jmpc obj pos:" + jmpPos);
                     mCodeReader.setPos(jmpPos);
                 }
                 break;
 
             default:
-                Log.e(TAG, "type invalidate:" + d);
+                KLog.e(TAG, "type invalidate:" + d);
                 ret = RESULT_STATE_ERROR;
                 break;
         }

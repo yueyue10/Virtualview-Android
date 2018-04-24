@@ -24,7 +24,7 @@
 
 package com.tmall.wireless.vaf.expr.engine.executor;
 
-import android.util.Log;
+import com.socks.library.KLog;
 
 import com.libra.virtualview.common.ExprCommon;
 import com.tmall.wireless.vaf.expr.engine.data.Data;
@@ -50,13 +50,13 @@ public class EqualExecutor extends ArithExecutor {
     public int execute(Object com) {
         int ret = super.execute(com);
 
-//        Log.d(TAG, "execute");
+//        KLog.d(TAG, "execute");
 
         byte funCode = mCodeReader.readByte();
         Data data2 = null;
 //        int type = TYPE_None;
 
-//        Log.d(TAG, "execute funCode:" + funCode);
+//        KLog.d(TAG, "execute funCode:" + funCode);
         switch (funCode) {
             case ExprCommon.VAR_VAR:
                 loadVar();
@@ -89,16 +89,16 @@ public class EqualExecutor extends ArithExecutor {
                 break;
         }
 
-//        Log.d(TAG, "do dow");
+//        KLog.d(TAG, "do dow");
         if (null != data2) {
 //            data2 = readData(type);
 
-//            Log.d(TAG, "result register id:" + mAriResultRegIndex);
+//            KLog.d(TAG, "result register id:" + mAriResultRegIndex);
             Data resultReg = mRegisterManger.get(mAriResultRegIndex);
             if (null != resultReg) {
                 ret = eqDeal(resultReg, data2);
             } else {
-                Log.e(TAG, "result register is null");
+                KLog.e(TAG, "result register is null");
             }
         }
 
@@ -110,7 +110,7 @@ public class EqualExecutor extends ArithExecutor {
 
         resultReg.copy(data2);
 
-//        Log.d(TAG, "eqDeal result:" + resultReg + "  data2:" + data2);
+//        KLog.d(TAG, "eqDeal result:" + resultReg + "  data2:" + data2);
 //        NativeObjectManager cm = mAppContext.getNativeObjectManager();
         if (mMyObjs.size() > 0) {
             for (Object obj : mMyObjs) {
@@ -118,7 +118,7 @@ public class EqualExecutor extends ArithExecutor {
             }
             ret = RESULT_STATE_SUCCESSFUL;
         } else {
-            Log.e(TAG, "obj is empty");
+            KLog.e(TAG, "obj is empty");
         }
 
         return ret;
@@ -134,7 +134,7 @@ public class EqualExecutor extends ArithExecutor {
             mMyObjs.addAll(objs);
             mPropertyNameId = mCodeReader.readInt();
         } else{
-            Log.e(TAG, "load var failed");
+            KLog.e(TAG, "load var failed");
         }
 
         return ret;

@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.view.nlayout;
 
 import android.graphics.Canvas;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 import com.tmall.wireless.vaf.framework.VafContext;
 import com.tmall.wireless.vaf.virtualview.core.NativeViewBase;

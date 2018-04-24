@@ -28,7 +28,7 @@ import android.graphics.Rect;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
+import com.socks.library.KLog;
 import android.view.View;
 
 import com.libra.Utils;
@@ -117,7 +117,7 @@ public class Scroller extends NativeViewBase {
             }
             if (null != engine && engine.execute(this, mAutoRefreshCode) ) {
             } else {
-                Log.e(TAG, "callAutoRefresh execute failed");
+                KLog.e(TAG, "callAutoRefresh execute failed");
             }
         }
 

@@ -25,7 +25,7 @@
 package com.tmall.wireless.vaf.virtualview.loader;
 
 import android.support.v4.util.ArrayMap;
-import android.util.Log;
+import com.socks.library.KLog;
 
 import android.util.SparseIntArray;
 import com.libra.expr.common.ExprCode;
@@ -63,7 +63,7 @@ public class ExprCodeLoader {
                 mCodeMap.put(index, c);
                 reader.seekBy(len);
             } else {
-                Log.e(TAG, "read string over");
+                KLog.e(TAG, "read string over");
                 ret = false;
                 break;
             }

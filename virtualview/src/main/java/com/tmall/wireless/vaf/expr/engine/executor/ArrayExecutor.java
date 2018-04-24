@@ -26,7 +26,7 @@ package com.tmall.wireless.vaf.expr.engine.executor;
 
 import java.util.Set;
 
-import android.util.Log;
+import com.socks.library.KLog;
 import com.tmall.wireless.vaf.expr.engine.DataManager;
 import com.tmall.wireless.vaf.expr.engine.data.Data;
 import com.tmall.wireless.vaf.expr.engine.data.Value;
@@ -45,30 +45,30 @@ public class ArrayExecutor extends ArithExecutor {
     public int execute(Object com) {
         int ret = super.execute(com);
 
-//        Log.d(TAG, "execute -------");
+//        KLog.d(TAG, "execute -------");
         // read fun name ids
         Set<Object> objs = findObject();
         if (null != objs) {
             int arrNameId = -1;
             if (mItemCount > 0) {
                 arrNameId = mCodeReader.readInt();
-//                Log.d(TAG, "execute ArrayNameId:" + mStringSupport.getString(arrNameId));
+//                KLog.d(TAG, "execute ArrayNameId:" + mStringSupport.getString(arrNameId));
             }
 
             Value param = readParam();
             if (null != param) {
                 int resultRegId = mCodeReader.readByte();
-//                Log.d(TAG, "param:" + param + "  resultRegId:" + resultRegId);
+//                KLog.d(TAG, "param:" + param + "  resultRegId:" + resultRegId);
                 if (call(arrNameId, resultRegId, param, objs)) {
                     ret = RESULT_STATE_SUCCESSFUL;
                 } else {
-                    Log.e(TAG, "call array failed");
+                    KLog.e(TAG, "call array failed");
                 }
             } else {
-                Log.e(TAG, "param is null");
+                KLog.e(TAG, "param is null");
             }
         } else {
-            Log.e(TAG, "execute findObject failed");
+            KLog.e(TAG, "execute findObject failed");
         }
 
         return ret;
@@ -91,20 +91,20 @@ public class ArrayExecutor extends ArithExecutor {
                 } else if (obj instanceof JSONArray) {
                     arr = (JSONArray) obj;
                 } else {
-                    Log.e(TAG, "error object:" + obj);
+                    KLog.e(TAG, "error object:" + obj);
                     ret = false;
                     break;
                 }
 
                 try {
                     Object returnValue = arr.get(index);
-//                    Log.d(TAG, "returnValue:" + returnValue);
+//                    KLog.d(TAG, "returnValue:" + returnValue);
                     Data result = mRegisterManger.get(resultRegId);
                     if (null != returnValue) {
                         if (!result.set(returnValue)) {
-                            Log.e(TAG, "call set return value failed:" + returnValue);
+                            KLog.e(TAG, "call set return value failed:" + returnValue);
                         } else {
-//                            Log.d(TAG, "call set return value ok:" + result);
+//                            KLog.d(TAG, "call set return value ok:" + result);
                         }
                     } else {
                         result.reset();
@@ -112,12 +112,12 @@ public class ArrayExecutor extends ArithExecutor {
 
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Log.e(TAG, "set value failed");
+                    KLog.e(TAG, "set value failed");
                     ret = false;
                 }
             }
         } else {
-            Log.e(TAG, "param not integer");
+            KLog.e(TAG, "param not integer");
         }
 
         return ret;
@@ -126,15 +126,15 @@ public class ArrayExecutor extends ArithExecutor {
     protected Value readParam() {
         // read param
         Value ret;
-//        Log.d(TAG, "readParam count:" + paramCount);
+//        KLog.d(TAG, "readParam count:" + paramCount);
         int type = mCodeReader.readByte();
-//            Log.d(TAG, "read param type:" + type);
+//            KLog.d(TAG, "read param type:" + type);
         Data d = readData(type);
         if (null != d) {
-//                Log.d(TAG, "readParam data:" + d);
+//                KLog.d(TAG, "readParam data:" + d);
             ret = d.mValue;
         } else {
-            Log.e(TAG, "read param failed:" + type);
+            KLog.e(TAG, "read param failed:" + type);
             ret = null;
         }
 
