@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2017 Alibaba Group
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<VHLayout
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: src = ${logoUrl}"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="300"
+        layoutWidth="match_parent"
+        src="${aUrl}" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = fit_start"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="fit_start"
+        src="${bUrl}" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = fit_xy"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="fit_xy"
+        src="https://img.alicdn.com/imgextra/i4/2215696389/TB2uXtXXGZPyuJjy1zcXXXp1FXa_!!2215696389.jpg" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = matrix"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="matrix"
+        src="https://img.alicdn.com/imgextra/i3/1709193846/TB2W5neXHAlyKJjSZFwXXXtqpXa_!!1709193846.jpg" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = center"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="center"
+        src="https://img.alicdn.com/imgextra/i3/1709193846/TB2W5neXHAlyKJjSZFwXXXtqpXa_!!1709193846.jpg" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = center_crop"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="center_crop"
+        src="https://img.alicdn.com/imgextra/i3/1910146537/TB2Vqm9X1IPyuJjSspcXXXiApXa_!!1910146537.jpg" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = center_inside"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="center_inside"
+        src="http://img.alicdn.com/tfs/TB1A8vYRpXXXXb4aXXXXXXXXXXX-946-330.jpg" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = fit_center"
+        textColor="#333333"
+        textSize="12" />
+
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="fit_center"
+        src="https://img.alicdn.com/imgextra/i3/1709193846/TB2W5neXHAlyKJjSZFwXXXtqpXa_!!1709193846.jpg" />
+
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: scaleType = fit_end"
+        textColor="#333333"
+        textSize="12" />
+    <NImage layoutHeight="150"
+        layoutWidth="match_parent"
+        scaleType="fit_end"
+        src="http://img.alicdn.com/imgextra/i3/883737303/TB22lhZXgojyKJjy0FaXXakspXa-883737303.jpg" />
+    <NText background="#999999"
+        gravity="v_center|h_center"
+        layoutHeight="50"
+        layoutWidth="match_parent"
+        text="你好"
+        textColor="#555555"
+        textSize="12" />
+    <VLine color="#082323"
+        gravity="h_center"
+        layoutHeight="100"
+        layoutWidth="match_parent"
+        orientation="V"
+        paintWidth="3" />
+
+</VHLayout>

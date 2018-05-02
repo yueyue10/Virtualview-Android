@@ -1,0 +1,69 @@
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2017 Alibaba Group
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<FrameLayout
+    action="action"
+    autoDimDirection="X"
+    autoDimX="340"
+    autoDimY="240"
+    background="#FFFFFF"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="wrap_content"
+    layoutWidth="340rp"
+    xmlns="http://schemas.vv.com/apk/res/vv"
+>
+    <NImage
+        layoutGravity="top|left"
+        layoutHeight="28.5rp"
+        layoutMarginLeft="30rp"
+        layoutMarginTop="29rp"
+        layoutWidth="212.5rp"
+        scaleType="fit_xy"
+        src="https://gw.alicdn.com/tfs/TB1DlkbSFXXXXaPXXXXXXXXXXXX-320-44.png" />
+    <NImage
+        layoutGravity="top|left"
+        layoutHeight="29rp"
+        layoutMarginLeft="29rp"
+        layoutMarginTop="71rp"
+        layoutWidth="143rp"
+        scaleType="fit_xy"
+        src="https://gw.alicdn.com/tfs/TB1ZwKHSFXXXXbMXFXXXXXXXXXX-215-43.png" />
+    <NImage
+        layoutGravity="top|left"
+        layoutHeight="120rp"
+        layoutMarginLeft="29rp"
+        layoutMarginTop="112rp"
+        layoutWidth="120rp"
+        scaleType="fit_xy"
+        src="https://img.alicdn.com/bao/uploaded/i3/725677994/TB127CMRXXXXXaaXpXXXXXXXXXX_!!0-item_pic.jpg" />
+    <NImage
+        layoutGravity="bottom|left"
+        layoutHeight="150rp"
+        layoutMarginLeft="185rp"
+        layoutMarginTop="81rp"
+        layoutWidth="150rp"
+        scaleType="fit_xy"
+        src="https://img.alicdn.com/bao/uploaded/i1/725677994/TB2h8kaaXXXXXa4XXXXXXXXXXXX_!!725677994.jpg" />
+
+</FrameLayout>

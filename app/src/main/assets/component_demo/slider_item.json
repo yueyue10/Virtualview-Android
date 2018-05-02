@@ -1,13 +1,13 @@
 {
   "style": {
-    "hGap": "12.5",
+    "hGap": "50",
     "bgColor": "#FFFFFF",
-    "vGap": "12.5",
+    "vGap": "50",
     "padding": "[15,15,15,15]"
   },
   "items": [
     {
-      "imgUrl": "https://gw.alicdn.com/tfscom/TB2HWVhppXXXXc8XXXXXXXXXXXX_!!655983464.png",
+      "imgUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524562356144&di=ee7310d78adbc3b2489032f6c74ad36a&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Faa18972bd40735fa324a79d792510fb30f240821.jpg",
       "title": "家有萌娃",
       "waterfall": "1",
       "type": "SliderItem"

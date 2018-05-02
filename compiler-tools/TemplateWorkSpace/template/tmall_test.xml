@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    layoutWidth="340rp"
+    layoutHeight="wrap_content"
+    action="NText"
+    flag="flag_exposure|flag_clickable"
+    background="#FFFFFF"
+    autoDimDirection="X"
+    autoDimX="340"
+    autoDimY="240"
+>
+    <NImage
+        scaleType="fit_xy"
+        layoutWidth="212.5rp"
+        layoutHeight="28.5rp"
+        layoutMarginTop="29rp"
+        layoutMarginLeft="30rp"
+        layoutGravity="top|left"
+        src="https://gw.alicdn.com/tfs/TB1DlkbSFXXXXaPXXXXXXXXXXXX-320-44.png"/>
+    <NImage
+        scaleType="fit_xy"
+        layoutWidth="143rp"
+        layoutHeight="29rp"
+        layoutMarginTop="71rp"
+        layoutMarginLeft="29rp"
+        layoutGravity="top|left"
+        src="https://gw.alicdn.com/tfs/TB1ZwKHSFXXXXbMXFXXXXXXXXXX-215-43.png"/>
+    <NImage
+        scaleType="fit_xy"
+        layoutWidth="120rp"
+        layoutHeight="120rp"
+        layoutMarginTop="112rp"
+        layoutMarginLeft="29rp"
+        layoutGravity="top|left"
+        src="https://img.alicdn.com/bao/uploaded/i3/725677994/TB127CMRXXXXXaaXpXXXXXXXXXX_!!0-item_pic.jpg"/>
+    <NImage
+        scaleType="fit_xy"
+        layoutWidth="150rp"
+        layoutHeight="150rp"
+        layoutMarginTop="81rp"
+        layoutMarginLeft="185rp"
+        layoutGravity="top|left"
+        src="https://img.alicdn.com/bao/uploaded/i1/725677994/TB2h8kaaXXXXXa4XXXXXXXXXXXX_!!725677994.jpg"/>
+</FrameLayout>
