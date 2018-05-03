@@ -24,53 +24,55 @@
   -->
 
 <VHLayout
-        flag="flag_exposure|flag_clickable"
-        action="action"
-        layoutWidth="80"
+    action="action"
+    background="#FFFFFF"
+    flag="flag_exposure|flag_clickable"
+    gravity="v_center"
+    layoutHeight="wrap_content"
+    layoutWidth="80"
+    orientation="v"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <FrameLayout
         layoutHeight="wrap_content"
-        background="#FFFFFF"
-        orientation="V"
-        gravity="v_center">
-        <FrameLayout
-                layoutWidth="match_parent"
-                layoutHeight="wrap_content"
-                layoutMarginTop="5">
-            <NImage
-                    layoutWidth="80"
-                    layoutHeight="80"
-                    layoutGravity="h_center"
-                    src="${imgUrl}"
-                    paddingTop="@{${hasImgPadding} ? 10 : 0 }"
-                    paddingRight="@{${hasImgPadding} ? 10 : 0 }"
-                    paddingBottom="@{${hasImgPadding} ? 10 : 0 }"
-                    paddingLeft="@{${hasImgPadding} ? 10 : 0 }"/>
-            <NText
-                    layoutWidth="wrap_content"
-                    layoutHeight="15"
-                    layoutGravity="bottom|h_center"
-                    layoutMarginBottom="-7.5"
-                    paddingLeft="3"
-                    paddingRight="3"
-                    text="${title}"
-                    textSize="10"
-                    textColor="@{${titleColor} ? ${titleColor} : #FFFFFF }"
-                    background="@{${titleBgColor} ? ${titleBgColor} : #FF0036 }"
-                    visibility="@{${title} ? visible : invisible }"
-                    gravity="v_center"
-                    lines="1"/>
-        </FrameLayout>
-        <VText
+        layoutMarginTop="5"
+        layoutWidth="match_parent">
+        <NImage
+            layoutGravity="h_center"
+            layoutHeight="80"
+            layoutWidth="80"
+            paddingBottom="@{${hasImgPadding} ? 10 : 0 }"
+            paddingLeft="@{${hasImgPadding} ? 10 : 0 }"
+            paddingRight="@{${hasImgPadding} ? 10 : 0 }"
+            paddingTop="@{${hasImgPadding} ? 10 : 0 }"
+            src="https://gw.alicdn.com/tfs/TB1rLhpSpXXXXcOaFXXXXXXXXXX-160-156.png" />
+        <NText
+            background="#FF0036"
+            gravity="v_center"
+            layoutGravity="bottom|h_center"
+            layoutHeight="15"
+            layoutMarginBottom="-7.5"
             layoutWidth="wrap_content"
-            layoutHeight="wrap_content"
-            layoutMarginTop="9"
-            layoutMarginBottom="5"
+            lines="1"
             paddingLeft="3"
             paddingRight="3"
-            text="${price}"
-            textSize="16"
-            textColor="@{${priceColor} ? ${priceColor} : #231F1F }"
-            background="@{${priceBgColor} ? ${priceBgColor} : #2D2D2D }"
-            gravity="v_center"
-            layoutGravity="h_center"
-            lines="1"/>
+            text="仅剩5件"
+            textColor="@{${titleColor} ? ${titleColor} : #FFFFFF }"
+            textSize="10"
+            visibility="visible" />
+    </FrameLayout>
+    <VText
+        background="#FF0036"
+        gravity="v_center"
+        layoutGravity="h_center"
+        layoutHeight="wrap_content"
+        layoutMarginBottom="5"
+        layoutMarginTop="9"
+        layoutWidth="wrap_content"
+        lines="1"
+        paddingLeft="3"
+        paddingRight="3"
+        text="89.88"
+        textColor="@{${priceColor} ? ${priceColor} : #231F1F }"
+        textSize="16" />
 </VHLayout>

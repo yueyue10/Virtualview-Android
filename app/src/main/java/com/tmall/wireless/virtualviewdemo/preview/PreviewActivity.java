@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -77,7 +78,7 @@ public class PreviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview);
-        mLinearLayout = (LinearLayout)findViewById(R.id.container);
+        mLinearLayout = (LinearLayout) findViewById(R.id.container);
 
         sVafContext = ((VirtualViewApplication) getApplication()).getVafContext();
         sViewManager = ((VirtualViewApplication) getApplication()).getViewManager();
@@ -85,12 +86,26 @@ public class PreviewActivity extends AppCompatActivity {
         sVafContext.getEventManager().register(EventManager.TYPE_Click, new IEventProcessor() {
             @Override
             public boolean process(EventData data) {
-                KLog.d(TAG, "TYPE_Click data view:" + data.mView);
-                KLog.d(TAG, "TYPE_Click view name:" + data.mVB.getTag("name"));
-                KLog.d(TAG, "TYPE_Click view traceId:" + data.mVB.getTag("activityTraceId"));
-                Toast.makeText(PreviewActivity.this,
-                        "TYPE_Click view name:" + data.mVB.getTag("name")
-                                + "\n traceId:" + data.mVB.getTag("activityTraceId"), Toast.LENGTH_LONG).show();
+                try {
+                    KLog.d(TAG, "TYPE_Click data view:" + data.mView);
+                    KLog.d(TAG, "TYPE_Click view name:" + data.mVB.getTag("name"));
+                    KLog.d(TAG, "TYPE_Click view traceId:" + data.mVB.getTag("activityTraceId"));
+                    KLog.d(TAG, "TYPE_Click view json:" + (JSONObject) data.mVB.getViewCache().getComponentData());
+                    String action = data.mVB.getAction();
+                    int id = data.mVB.getId();
+                    KLog.d(TAG, "action:" + action + "   id:" + id);
+                    Toast.makeText(PreviewActivity.this,
+                            "TYPE_Click view action:" + action
+                                    + "\n id:" + id, Toast.LENGTH_SHORT).show();
+                    switch (action) {
+                        case "startActivity":
+                            break;
+                        case "toUrl":
+                            break;
+                    }
+                } catch (Exception e) {
+                    KLog.e(TAG, Log.getStackTraceString(e));
+                }
                 return true;
             }
         });
@@ -118,7 +133,7 @@ public class PreviewActivity extends AppCompatActivity {
             String url = intent.getStringExtra(KEY_URL);
             mTemplateName = HttpUtil.getFirstPath(url);
             refreshByUrl(url);
-        } else if (FROM_REAL_PREVIEW  == intent.getIntExtra(KEY_FROM, 0)) {
+        } else if (FROM_REAL_PREVIEW == intent.getIntExtra(KEY_FROM, 0)) {
             mTemplateName = intent.getStringExtra(KEY_NAME);
             refreshByName(mTemplateName);
         }
@@ -132,7 +147,7 @@ public class PreviewActivity extends AppCompatActivity {
             return;
         }
         mContainer = sVafContext.getContainerService().getContainer(templateName, true);
-        IContainer iContainer = (IContainer)mContainer;
+        IContainer iContainer = (IContainer) mContainer;
         if (jsonData != null) {
             iContainer.getVirtualView().setVData(jsonData);
         }
@@ -163,7 +178,7 @@ public class PreviewActivity extends AppCompatActivity {
                     String url = intent.getStringExtra(KEY_URL);
                     mTemplateName = HttpUtil.getFirstPath(url);
                     refreshByUrl(url);
-                } else if (FROM_REAL_PREVIEW  == intent.getIntExtra(KEY_FROM, 0)) {
+                } else if (FROM_REAL_PREVIEW == intent.getIntExtra(KEY_FROM, 0)) {
                     mTemplateName = intent.getStringExtra(KEY_NAME);
                     refreshByName(mTemplateName);
                 }
@@ -238,12 +253,11 @@ public class PreviewActivity extends AppCompatActivity {
     }
 
 
-
     private String getUrl(String name) {
         return HttpUtil.getHostUrl() + name + "/data.json";
     }
 
-    private void loadTemplates(ArrayList<String> templates){
+    private void loadTemplates(ArrayList<String> templates) {
         for (String temp : templates) {
             sViewManager.loadBinBufferSync(Base64.decode(temp, Base64.DEFAULT));
         }

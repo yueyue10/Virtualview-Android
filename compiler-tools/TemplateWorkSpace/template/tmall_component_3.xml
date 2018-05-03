@@ -24,41 +24,42 @@
   -->
 
 <VHLayout
-        flag="flag_exposure|flag_clickable"
-        action="action"
-        layoutHeight="wrap_content"
-        layoutWidth="85"
-        background="#FFFFFF"
-        orientation="V">
+    action="action"
+    background="#FFFFFF"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="wrap_content"
+    layoutWidth="85"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
     <NImage
-            layoutWidth="50"
-            layoutHeight="25"
-            layoutMarginTop="10"
-            layoutGravity="h_center"
-            visibility="@{${logoUrl} ? visible : invisible }"
-            src="${logoUrl}"/>
+        layoutGravity="h_center"
+        layoutHeight="25"
+        layoutMarginTop="10"
+        layoutWidth="50"
+        src="https://gw.alicdn.com/tfs/TB1IoTCSpXXXXajXFXXXXXXXXXX-100-50.png"
+        visibility="visible" />
     <FrameLayout
-            layoutWidth="wrap_content"
-            layoutHeight="wrap_content"
+        layoutGravity="h_center"
+        layoutHeight="wrap_content"
+        layoutMarginBottom="10"
+        layoutMarginTop="10"
+        layoutWidth="wrap_content">
+        <NImage
             layoutGravity="h_center"
-            layoutMarginTop="10"
-            layoutMarginBottom="10">
+            layoutHeight="65"
+            layoutWidth="65"
+            paddingBottom="@{${hasImgPadding} ? 10 : 0 }"
+            paddingLeft="@{${hasImgPadding} ? 10 : 0 }"
+            paddingRight="@{${hasImgPadding} ? 10 : 0 }"
+            paddingTop="@{${hasImgPadding} ? 10 : 0 }"
+            src="https://gw.alicdn.com/tfs/TB1Yf2iSpXXXXcmaXXXXXXXXXXX-130-130.png" />
         <NImage
-                layoutWidth="65"
-                layoutHeight="65"
-                paddingTop="@{${hasImgPadding} ? 10 : 0 }"
-                paddingRight="@{${hasImgPadding} ? 10 : 0 }"
-                paddingBottom="@{${hasImgPadding} ? 10 : 0 }"
-                paddingLeft="@{${hasImgPadding} ? 10 : 0 }"
-                layoutGravity="h_center"
-                src="${imgUrl}"/>
-        <NImage
-                layoutWidth="38"
-                layoutHeight="38"
-                layoutMarginRight="-7"
-                layoutGravity="right|top"
-                src="${tagUrl}"
-                visibility="@{${tagUrl} ? visible : gone }"/>
+            layoutGravity="right|top"
+            layoutHeight="38"
+            layoutMarginRight="-7"
+            layoutWidth="38"
+            src="https://gw.alicdn.com/tfs/TB1Zru_SpXXXXcaapXXXXXXXXXX-76-76.png"
+            visibility="@{${tagUrl} ? visible : gone }" />
     </FrameLayout>
 
 </VHLayout>

@@ -48,8 +48,8 @@
         layoutGravity="h_center"
         layoutHeight="wrap_content"
         layoutWidth="wrap_content"
-        text="${title}"
-        textColor="@{${titleColor} ? ${titleColor} : #333333 }"
+        text="会员积分"
+        textColor="#FF1234"
         textSize="12" />
 
 </VHLayout>

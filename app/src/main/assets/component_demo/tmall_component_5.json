@@ -5,8 +5,9 @@
       "imgUrl": "https://img.alicdn.com/tfs/TB1ZdpvRpXXXXX9aFXXXXXXXXXX-134-176.png",
       "hasImgPadding": "true",
       "price": "￥99.5",
-      "title": "商品标题如果很长的话怎么办",
+      "title": "12商品标题如果很长的话怎么办",
       "titleColor": "#ff00ff",
+      "titleSize": "16",
       "benefitColor": "#00ff00",
       "benefitTitle": "利益标",
       "type": "TmallComponent6"

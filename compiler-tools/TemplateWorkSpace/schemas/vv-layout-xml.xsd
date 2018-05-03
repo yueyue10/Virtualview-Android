@@ -70,6 +70,7 @@
         <xs:attribute ref="vv:flag" />
         <xs:attribute ref="vv:action" />
         <xs:attribute ref="vv:class" />
+        <xs:attribute ref="vv:onClick" />
     </xs:complexType>
 
     <xs:element name="NText"
@@ -91,6 +92,7 @@
                 <xs:attribute ref="vv:textStyle" />
                 <xs:attribute ref="vv:ellipsize" />
                 <xs:attribute ref="vv:lines" />
+                <xs:attribute ref="vv:lineHeight" />
                 <xs:attribute ref="vv:maxLines" />
                 <xs:attribute ref="vv:lineSpaceMultiplier" />
                 <xs:attribute ref="vv:lineSpaceExtra" />
@@ -118,6 +120,7 @@
                 <xs:attribute ref="vv:textSize" />
                 <xs:attribute ref="vv:textStyle" />
                 <xs:attribute ref="vv:gravity" />
+                <xs:attribute ref="vv:lines" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -433,6 +436,9 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:colCount" />
                 <xs:attribute ref="vv:itemHeight" />
                 <xs:attribute ref="vv:itemVerticalMargin" />
@@ -454,6 +460,9 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:orientation" />
                 <xs:attribute ref="vv:layoutDirection" />
             </xs:extension>
@@ -472,10 +481,11 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
-                <xs:attribute ref="vv:orientation" />
                 <xs:group maxOccurs="unbounded"
                     minOccurs="0"
                     ref="any-view" />
+                <xs:attribute ref="vv:orientation" />
+                <xs:attribute ref="vv:gravity" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>

@@ -25,25 +25,35 @@
   -->
 
 <VHLayout
-    flag="flag_exposure|flag_clickable"
     action="action"
-    orientation="V"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="wrap_content"
     layoutWidth="match_parent"
-    layoutHeight="180">
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
     <NImage
         id="5"
-        src="${imgUrl}"
-        scaleType="center_crop"
         layoutGravity="v_center|h_center"
+        layoutHeight="150"
         layoutWidth="match_parent"
-        layoutHeight="150"/>
+        scaleType="center_crop"
+        src="${imgUrl}" />
     <VText
-        layoutGravity="h_center|v_center"
         gravity="v_center|h_center"
         id="4"
+        layoutGravity="right"
+        layoutHeight="30"
+        layoutWidth="match_parent"
         text="${title}"
         textColor="#000000"
-        textSize="14"
-        layoutHeight="30"
-        layoutWidth="match_parent" />
+        textSize="14" />
+    <VText
+        gravity="v_center"
+        id="6"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="${title}"
+        textColor="#555555"
+        textSize="10"
+    />
 </VHLayout>

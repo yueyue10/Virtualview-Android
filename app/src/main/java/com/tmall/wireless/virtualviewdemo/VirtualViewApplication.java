@@ -230,6 +230,6 @@ public class VirtualViewApplication extends Application {
             sVafContext.getEventManager().register(EventManager.TYPE_Click, new ClickProcessorImpl());
             sVafContext.getEventManager().register(EventManager.TYPE_Exposure, new ExposureProcessorImpl());
         }
-
+        KLog.init(BuildConfig.LOG_DEBUG, "VvPreview");
     }
 }

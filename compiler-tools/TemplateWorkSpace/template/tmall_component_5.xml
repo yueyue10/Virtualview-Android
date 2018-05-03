@@ -24,31 +24,32 @@
   -->
 
 <FrameLayout
-        autoDimDirection="X"
-        autoDimX="750"
-        autoDimY="590"
-        dataTag="container"
-        layoutHeight="wrap_content"
-        layoutWidth="match_parent">
+    autoDimDirection="X"
+    autoDimX="750"
+    autoDimY="590"
+    dataTag="container"
+    layoutHeight="wrap_content"
+    layoutWidth="match_parent"
+    xmlns="http://schemas.vv.com/apk/res/vv">
 
     <NImage
-            id="1"
-            action="action"
-            src="${bgImgUrl}"
-            flag="flag_exposure|flag_clickable"
-            layoutHeight="match_parent"
-            layoutWidth="match_parent"/>
+        action="action"
+        flag="flag_exposure|flag_clickable"
+        id="1"
+        layoutHeight="match_parent"
+        layoutWidth="match_parent"
+        src="${bgImgUrl}" />
 
     <Grid
-            id="2"
-            layoutGravity="bottom"
-            flag="flag_draw"
-            colCount="3"
-            dataTag="${data}"
-            layoutHeight="wrap_content"
-            layoutWidth="match_parent"
-            layoutMarginLeft="25rp"
-            layoutMarginRight="25rp"
-            layoutMarginBottom="25rp"
-            itemHorizontalMargin="2"/>
+        colCount="3"
+        dataTag="${data}"
+        flag="flag_draw"
+        id="2"
+        itemHorizontalMargin="2"
+        layoutGravity="bottom"
+        layoutHeight="wrap_content"
+        layoutMarginBottom="25rp"
+        layoutMarginLeft="25rp"
+        layoutMarginRight="25rp"
+        layoutWidth="match_parent" />
 </FrameLayout>

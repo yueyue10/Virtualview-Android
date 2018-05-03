@@ -118,6 +118,7 @@
                         <xs:enumeration value='visible' />
                         <xs:enumeration value='invisible' />
                         <xs:enumeration value='gone' />
+                        <xs:enumeration value='@{${xxUrl} ? visible : invisible }' />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:union>
@@ -127,6 +128,8 @@
     <xs:attribute name='action'
         type='xs:string' />
     <xs:attribute name='class'
+        type='xs:string' />
+    <xs:attribute name='onClick'
         type='xs:string' />
 
     <xs:attribute name='flag'>
@@ -185,6 +188,8 @@
 
     <xs:attribute name='lines'
         type='xs:int' />
+    <xs:attribute name='lineHeight'
+        type='xs:int' />
     <xs:attribute name='maxLines'
         type='xs:int' />
     <xs:attribute name='lineSpaceMultiplier'
@@ -195,16 +200,19 @@
         type='xs:anyType' />
     <xs:attribute name='gravity'>
         <xs:simpleType>
-            <xs:restriction base='xs:NMTOKEN'>
-                <xs:enumeration value='left' />
-                <xs:enumeration value='right' />
-                <xs:enumeration value='top' />
-                <xs:enumeration value='bottom' />
-                <xs:enumeration value='v_center' />
-                <xs:enumeration value='h_center' />
-            </xs:restriction>
+            <xs:union memberTypes='xs:string'>
+                <xs:simpleType>
+                    <xs:restriction base='xs:NMTOKEN'>
+                        <xs:enumeration value='left' />
+                        <xs:enumeration value='right' />
+                        <xs:enumeration value='top' />
+                        <xs:enumeration value='bottom' />
+                        <xs:enumeration value='v_center' />
+                        <xs:enumeration value='h_center' />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:union>
         </xs:simpleType>
-
     </xs:attribute>
 
     <xs:attribute name='src'
