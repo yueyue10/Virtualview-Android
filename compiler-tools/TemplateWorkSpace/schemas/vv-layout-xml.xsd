@@ -31,6 +31,7 @@
             <xs:element ref="NGridLayout" />
             <xs:element ref="NVH2Layout" />
             <xs:element ref="NVHLayout" />
+            <xs:element ref="TotalContainer" />
         </xs:choice>
     </xs:group>
 
@@ -121,6 +122,9 @@
                 <xs:attribute ref="vv:textStyle" />
                 <xs:attribute ref="vv:gravity" />
                 <xs:attribute ref="vv:lines" />
+                <xs:attribute ref="vv:layoutRatio" />
+                <xs:attribute ref="vv:ellipsize" />
+                <xs:attribute ref="vv:name" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -199,6 +203,7 @@
                 <xs:attribute ref="vv:style" />
                 <xs:attribute ref="vv:dashEffect" />
                 <xs:attribute ref="vv:gravity" />
+                <xs:attribute ref="vv:layoutDirection" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -238,7 +243,7 @@
         <xs:complexContent mixed="false">
             <xs:extension base="View">
                 <xs:attribute ref="vv:color" />
-                <xs:attribute ref="vv:style" />
+                <xs:attribute ref="vv:type" />
                 <xs:attribute ref="vv:paintStyle" />
                 <xs:attribute ref="vv:paintWidth" />
                 <xs:attribute ref="vv:diameterX" />
@@ -395,8 +400,12 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:orientation" />
                 <xs:attribute ref="vv:layoutRatio" />
+                <xs:attribute ref="vv:gravity" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -534,7 +543,8 @@
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:element name="NFrameLayout">
+    <xs:element name="NFrameLayout"
+        type="NFrameLayout">
         <xs:complexType mixed="false">
             <xs:annotation>
                 <xs:documentation>
@@ -544,6 +554,17 @@
             </xs:annotation>
         </xs:complexType>
     </xs:element>
+
+    <xs:complexType name="NFrameLayout"
+        mixed="false">
+        <xs:complexContent mixed="false">
+            <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
     <xs:element name="NRatioLayout"
         type="NRatioLayout">
@@ -560,6 +581,9 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:orientation" />
                 <xs:attribute ref="vv:layoutRatio" />
             </xs:extension>
@@ -580,6 +604,9 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:colCount" />
                 <xs:attribute ref="vv:itemHeight" />
                 <xs:attribute ref="vv:itemVerticalMargin" />
@@ -602,6 +629,9 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:orientation" />
                 <xs:attribute ref="vv:layoutDirection" />
             </xs:extension>
@@ -622,7 +652,31 @@
         mixed="false">
         <xs:complexContent mixed="false">
             <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
                 <xs:attribute ref="vv:orientation" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="TotalContainer"
+        type="TotalContainer">
+        <xs:annotation>
+            <xs:documentation>
+                应该和Container类似，api没有介绍
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="TotalContainer"
+        mixed="false">
+        <xs:complexContent mixed="false">
+            <xs:extension base="View">
+                <xs:group maxOccurs="unbounded"
+                    minOccurs="0"
+                    ref="any-view" />
+                <xs:attribute ref="vv:native" />
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>

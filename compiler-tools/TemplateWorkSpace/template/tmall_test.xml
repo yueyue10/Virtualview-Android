@@ -1,45 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
-    layoutWidth="340rp"
-    layoutHeight="wrap_content"
-    action="NText"
-    flag="flag_exposure|flag_clickable"
-    background="#FFFFFF"
+<FrameLayout action="NText"
     autoDimDirection="X"
     autoDimX="340"
     autoDimY="240"
->
-    <NImage
-        scaleType="fit_xy"
-        layoutWidth="212.5rp"
+    background="#FFFFFF"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="wrap_content"
+    layoutWidth="340rp"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <NImage layoutGravity="top|left"
         layoutHeight="28.5rp"
-        layoutMarginTop="29rp"
         layoutMarginLeft="30rp"
-        layoutGravity="top|left"
-        src="https://gw.alicdn.com/tfs/TB1DlkbSFXXXXaPXXXXXXXXXXXX-320-44.png"/>
-    <NImage
+        layoutMarginTop="29rp"
+        layoutWidth="212.5rp"
         scaleType="fit_xy"
-        layoutWidth="143rp"
+        src="https://gw.alicdn.com/tfs/TB1DlkbSFXXXXaPXXXXXXXXXXXX-320-44.png" />
+    <NImage layoutGravity="top|left"
         layoutHeight="29rp"
+        layoutMarginLeft="29rp"
         layoutMarginTop="71rp"
-        layoutMarginLeft="29rp"
-        layoutGravity="top|left"
-        src="https://gw.alicdn.com/tfs/TB1ZwKHSFXXXXbMXFXXXXXXXXXX-215-43.png"/>
-    <NImage
+        layoutWidth="143rp"
         scaleType="fit_xy"
-        layoutWidth="120rp"
+        src="https://gw.alicdn.com/tfs/TB1ZwKHSFXXXXbMXFXXXXXXXXXX-215-43.png" />
+    <NImage layoutGravity="top|left"
         layoutHeight="120rp"
-        layoutMarginTop="112rp"
         layoutMarginLeft="29rp"
-        layoutGravity="top|left"
-        src="https://img.alicdn.com/bao/uploaded/i3/725677994/TB127CMRXXXXXaaXpXXXXXXXXXX_!!0-item_pic.jpg"/>
-    <NImage
+        layoutMarginTop="112rp"
+        layoutWidth="120rp"
         scaleType="fit_xy"
-        layoutWidth="150rp"
+        src="https://img.alicdn.com/bao/uploaded/i3/725677994/TB127CMRXXXXXaaXpXXXXXXXXXX_!!0-item_pic.jpg" />
+    <NImage layoutGravity="top|left"
         layoutHeight="150rp"
-        layoutMarginTop="81rp"
         layoutMarginLeft="185rp"
-        layoutGravity="top|left"
-        src="https://img.alicdn.com/bao/uploaded/i1/725677994/TB2h8kaaXXXXXa4XXXXXXXXXXXX_!!725677994.jpg"/>
+        layoutMarginTop="81rp"
+        layoutWidth="150rp"
+        scaleType="fit_xy"
+        src="https://img.alicdn.com/bao/uploaded/i1/725677994/TB2h8kaaXXXXXa4XXXXXXXXXXXX_!!725677994.jpg" />
 </FrameLayout>

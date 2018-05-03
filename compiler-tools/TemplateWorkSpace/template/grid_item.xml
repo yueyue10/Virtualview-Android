@@ -24,22 +24,20 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-    action="action"
+<VHLayout action="action"
     flag="flag_exposure|flag_clickable"
     layoutHeight="wrap_content"
     layoutWidth="match_parent"
     orientation="V"
     xmlns="http://schemas.vv.com/apk/res/vv">
-    <NImage
-        id="5"
+
+    <NImage id="5"
         layoutGravity="v_center|h_center"
         layoutHeight="150"
         layoutWidth="match_parent"
         scaleType="center_crop"
         src="${imgUrl}" />
-    <VText
-        gravity="v_center|h_center"
+    <VText gravity="v_center|h_center"
         id="4"
         layoutGravity="right"
         layoutHeight="30"
@@ -47,13 +45,11 @@
         text="${title}"
         textColor="#000000"
         textSize="14" />
-    <VText
-        gravity="v_center"
+    <VText gravity="v_center"
         id="6"
         layoutHeight="20"
         layoutWidth="match_parent"
         text="${title}"
         textColor="#555555"
-        textSize="10"
-    />
+        textSize="10" />
 </VHLayout>

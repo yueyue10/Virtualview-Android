@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,172 +22,152 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
         text="Title: text"
-        textSize="12"
         textColor="#333333"
-        background="#008899"
+        textSize="12" />
+
+    <VText layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12" />
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="20" />
+        text="Title: textSize = 16"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="16" />
 
-    <VText
-            text="Title: textSize = 16"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: textColor = #FF0000"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="16"
-            textColor="#333333"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#FF0000"
+        textSize="12" />
 
-    <VText
-            text="Title: textColor = #FF0000"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: textStyle = bold"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#FF0000"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12"
+        textStyle="bold" />
 
-    <VText
-            text="Title: textStyle = bold"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: textStyle = strike"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            textStyle="bold"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12"
+        textStyle="strike" />
 
-    <VText
-            text="Title: textStyle = strike"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: textStyle = italic"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            textStyle="strike"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12"
+        textStyle="italic" />
 
-    <VText
-            text="Title: textStyle = italic"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: borderWidth = 1 borderColor = #0088FF"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            textStyle="italic"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText borderColor="#0088FF"
+        borderWidth="1"
+        layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Title: borderWidth = 1 borderColor = #0088FF"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: borderWidth = 1 borderColor = #0088FF borderRadius = 2"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            borderColor="#0088FF"
-            borderWidth="1"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText borderColor="#0088FF"
+        borderRadius="2"
+        borderWidth="1"
+        layoutHeight="20"
+        layoutWidth="wrap_content"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Title: borderWidth = 1 borderColor = #0088FF borderRadius = 2"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: gravity = h_center|v_center"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            borderColor="#0088FF"
-            borderWidth="1"
-            borderRadius="2"
-            layoutWidth="wrap_content"
-            layoutHeight="20" />
+    <VText borderColor="#0088FF"
+        borderWidth="1"
+        gravity="h_center|v_center"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Title: gravity = h_center|v_center"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: background = #008899"
+        textColor="#333333"
+        textSize="12" />
 
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            borderColor="#0088FF"
-            borderWidth="1"
-            gravity="h_center|v_center"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
-
-    <VText
-            text="Title: background = #008899"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
-
-    <VText
-            text="Hello Virtual View"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            gravity="h_center|v_center"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        gravity="h_center|v_center"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Hello Virtual View"
+        textColor="#333333"
+        textSize="12" />
 </VHLayout>

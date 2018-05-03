@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,54 +22,48 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
-            text="Title: color = #0000FF | initValue = 70"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
-
-    <Progress
-            layoutWidth="match_parent"
-            layoutHeight="20"
-            initValue="70"
-            color="#0000FF" />
-
-    <VText
-        text="Title: background = #EEEEEE | color = #0000FF | initValue = 100"
-        textSize="12"
+        text="Title: color = #0000FF | initValue = 70"
         textColor="#333333"
-        background="#008899"
+        textSize="12" />
+
+    <Progress color="#0000FF"
+        initValue="70"
+        layoutHeight="20"
+        layoutWidth="match_parent" />
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="20" />
+        text="Title: background = #EEEEEE | color = #0000FF | initValue = 100"
+        textColor="#333333"
+        textSize="12" />
 
-    <Progress
-            layoutWidth="match_parent"
-            layoutHeight="20"
-            initValue="100"
-            color="#0000FF"
-            background="#EEEEEE" />
+    <Progress background="#EEEEEE"
+        color="#0000FF"
+        initValue="100"
+        layoutHeight="20"
+        layoutWidth="match_parent" />
 
-    <VText
-            text="Title: width = 200 | initValue = 110"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: width = 200 | initValue = 110"
+        textColor="#333333"
+        textSize="12" />
 
-    <Progress
-            layoutWidth="200"
-            layoutHeight="20"
-            initValue="110"
-            color="#0000FF"
-            background="#EEEEEE" />
+    <Progress background="#EEEEEE"
+        color="#0000FF"
+        initValue="110"
+        layoutHeight="20"
+        layoutWidth="200" />
 
 </VHLayout>

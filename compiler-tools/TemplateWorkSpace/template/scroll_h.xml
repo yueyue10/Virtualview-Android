@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2018 Alibaba Group
@@ -23,28 +22,26 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
-        layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
-            text="Title: orientation = H | firstSpace = 10rp | lastSpace = 10rp"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
 
-    <Scroller
-            dataTag="${items}"
-            firstSpace="10rp"
-            lastSpace="10rp"
-            lineSpace="10rp"
-            span="5rp"
-            orientation="H"
-            layoutWidth="match_parent"
-            layoutHeight="285rp" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: orientation = H | firstSpace = 10rp | lastSpace = 10rp"
+        textColor="#333333"
+        textSize="12" />
+
+    <Scroller dataTag="${items}"
+        firstSpace="10rp"
+        lastSpace="10rp"
+        layoutHeight="285rp"
+        layoutWidth="match_parent"
+        lineSpace="10rp"
+        orientation="H"
+        span="5rp" />
 
 </VHLayout>

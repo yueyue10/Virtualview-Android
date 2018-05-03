@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2018 Alibaba Group
@@ -23,126 +22,112 @@
   ~ SOFTWARE.
   -->
 
-<FrameLayout
-        flag="flag_exposure|flag_clickable"
-        action="action"
-        background="#ECE5D3"
-        layoutWidth="345rp"
-        layoutHeight="wrap_content"
-        autoDimDirection="X"
-        paddingTop="3"
-        paddingRight="3"
-        paddingBottom="3"
-        paddingLeft="3"
-        autoDimX="335"
-        autoDimY="639">
-    <FrameLayout
+<FrameLayout action="action"
+    autoDimDirection="X"
+    autoDimX="335"
+    autoDimY="639"
+    background="#ECE5D3"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="wrap_content"
+    layoutWidth="345rp"
+    paddingBottom="3"
+    paddingLeft="3"
+    paddingRight="3"
+    paddingTop="3"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <FrameLayout layoutHeight="wrap_content"
+        layoutWidth="match_parent">
+        <GridLayout background="#FFFFFF"
+            colCount="2"
+            itemHorizontalMargin="5"
+            itemVerticalMargin="5"
+            layoutHeight="wrap_content"
             layoutWidth="match_parent"
-            layoutHeight="wrap_content">
-        <GridLayout
-                colCount="2"
+            paddingBottom="7"
+            paddingLeft="7"
+            paddingRight="7"
+            paddingTop="7">
+            <NImage layoutHeight="70"
                 layoutWidth="match_parent"
-                layoutHeight="wrap_content"
-                itemHorizontalMargin="5"
-                itemVerticalMargin="5"
-                background="#FFFFFF"
-                paddingTop="7"
-                paddingRight="7"
-                paddingBottom="7"
-                paddingLeft="7">
-            <NImage
-                    layoutWidth="match_parent"
-                    layoutHeight="70"
-                    scaleType="center_crop"
-                    visibility="@{${data[0]} ? visible : gone }"
-                    src="${data[0]}"/>
-            <NImage
-                    layoutWidth="match_parent"
-                    layoutHeight="70"
-                    scaleType="center_crop"
-                    visibility="@{${data[1]} ? visible : gone }"
-                    src="${data[1]}"/>
-            <NImage
-                    layoutWidth="match_parent"
-                    layoutHeight="70"
-                    scaleType="center_crop"
-                    visibility="@{${data[2]} ? visible : gone }"
-                    src="${data[2]}"/>
-            <NImage
-                    layoutWidth="match_parent"
-                    layoutHeight="70"
-                    scaleType="center_crop"
-                    visibility="@{${data[3]} ? visible : gone }"
-                    src="${data[3]}"/>
-            <NImage
-                    layoutWidth="match_parent"
-                    layoutHeight="70"
-                    scaleType="center_crop"
-                    visibility="@{${data[4]} ? visible : gone }"
-                    src="${data[4]}"/>
-            <NImage
-                    layoutWidth="match_parent"
-                    layoutHeight="70"
-                    scaleType="center_crop"
-                    visibility="@{${data[5]} ? visible : gone }"
-                    src="${data[5]}"/>
+                scaleType="center_crop"
+                src="${data[0]}"
+                visibility="@{${data[0]} ? visible : gone }" />
+            <NImage layoutHeight="70"
+                layoutWidth="match_parent"
+                scaleType="center_crop"
+                src="${data[1]}"
+                visibility="@{${data[1]} ? visible : gone }" />
+            <NImage layoutHeight="70"
+                layoutWidth="match_parent"
+                scaleType="center_crop"
+                src="${data[2]}"
+                visibility="@{${data[2]} ? visible : gone }" />
+            <NImage layoutHeight="70"
+                layoutWidth="match_parent"
+                scaleType="center_crop"
+                src="${data[3]}"
+                visibility="@{${data[3]} ? visible : gone }" />
+            <NImage layoutHeight="70"
+                layoutWidth="match_parent"
+                scaleType="center_crop"
+                src="${data[4]}"
+                visibility="@{${data[4]} ? visible : gone }" />
+            <NImage layoutHeight="70"
+                layoutWidth="match_parent"
+                scaleType="center_crop"
+                src="${data[5]}"
+                visibility="@{${data[5]} ? visible : gone }" />
         </GridLayout>
-        <NImage
-                layoutWidth="match_parent"
-                layoutHeight="wrap_content"
-                src="tk_recommend_toplist_mask_image"/>
+        <NImage layoutHeight="wrap_content"
+            layoutWidth="match_parent"
+            src="tk_recommend_toplist_mask_image" />
     </FrameLayout>
 
-    <VHLayout
-            layoutWidth="match_parent"
+    <VHLayout background="#ECE5D3"
+        layoutGravity="bottom"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent"
+        orientation="V"
+        paddingBottom="8"
+        paddingTop="8"
+        visibility="@{${switch} ? visible : invisible }">
+        <NText ellipsize="end"
+            layoutGravity="h_center"
             layoutHeight="wrap_content"
-            visibility="@{${switch} ? visible : invisible }"
-            paddingTop="8"
-            paddingBottom="8"
-            background="#ECE5D3"
-            layoutGravity="bottom"
-            orientation="V">
-        <NText
-                layoutWidth="match_parent"
+            layoutWidth="match_parent"
+            maxLines="2"
+            paddingLeft="10"
+            paddingRight="10"
+            text="${title}"
+            textColor="#232323"
+            textSize="13"
+            textStyle="bold" />
+        <VHLayout layoutHeight="wrap_content"
+            layoutWidth="match_parent"
+            orientation="H"
+            paddingTop="3">
+            <NText layoutGravity="v_center"
                 layoutHeight="wrap_content"
+                layoutWidth="wrap_content"
+                maxLines="1"
                 paddingLeft="10"
-                paddingRight="10"
-                text="${title}"
-                textSize="13"
-                textStyle="bold"
+                paddingRight="3"
+                text="${subTitle}"
                 textColor="#232323"
-                layoutGravity="h_center"
-                maxLines="2"
-                ellipsize="end"/>
-        <VHLayout
-                layoutWidth="match_parent"
-                layoutHeight="wrap_content"
-                paddingTop="3"
-                orientation="H">
-            <NText
-                    layoutWidth="wrap_content"
-                    layoutHeight="wrap_content"
-                    paddingLeft="10"
-                    paddingRight="3"
-                    text="${subTitle}"
-                    textSize="12"
-                    textColor="#232323"
-                    maxLines="1"
-                    layoutGravity="v_center"/>
-            <NImage
-                    layoutWidth="11"
-                    layoutHeight="12"
-                    layoutGravity="v_center"
-                    src="tk_component_toplist_double_arrow"/>
+                textSize="12" />
+            <NImage layoutGravity="v_center"
+                layoutHeight="12"
+                layoutWidth="11"
+                src="tk_component_toplist_double_arrow" />
 
         </VHLayout>
     </VHLayout>
-    <NImage
-            layoutWidth="35.5"
-            layoutHeight="54.5"
-            layoutMarginTop="-3"
-            layoutGravity="left|top"
-            layoutMarginLeft="7"
-            scaleType="center_crop"
-            src="${logoUrl}"/>
+    <NImage layoutGravity="left|top"
+        layoutHeight="54.5"
+        layoutMarginLeft="7"
+        layoutMarginTop="-3"
+        layoutWidth="35.5"
+        scaleType="center_crop"
+        src="${logoUrl}" />
 </FrameLayout>

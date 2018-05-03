@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,46 +22,42 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        action="action"
-        orientation="V"
-        autoDimDirection="X"
-        autoDimX="231"
-        autoDimY="325"
-        dataTag="container"
-        flag="flag_exposure|flag_clickable"
+<VHLayout action="action"
+    autoDimDirection="X"
+    autoDimX="231"
+    autoDimY="325"
+    background="white"
+    dataTag="container"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="wrap_content"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <FrameLayout autoDimDirection="X"
+        autoDimX="1"
+        autoDimY="1"
         layoutHeight="wrap_content"
-        layoutWidth="match_parent"
-        background="white">
-
-    <FrameLayout
+        layoutWidth="match_parent">
+        <NImage id="1"
+            layoutHeight="match_parent"
             layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            autoDimDirection="X"
-            autoDimX="1"
-            autoDimY="1">
-        <NImage
-                id="1"
-                src="${imgUrl}"
-                layoutHeight="match_parent"
-                layoutWidth="match_parent"/>
+            src="${imgUrl}" />
     </FrameLayout>
-    <VText
-            text="${title}"
-            layoutHeight="wrap_content"
-            layoutMarginTop="20rp"
-            layoutMarginLeft="25rp"
-            layoutWidth="wrap_content"
-            textColor="${style.onePlusThreetextColor}"
-            textSize="11"/>
+    <VText layoutHeight="wrap_content"
+        layoutMarginLeft="25rp"
+        layoutMarginTop="20rp"
+        layoutWidth="wrap_content"
+        text="${title}"
+        textColor="${style.onePlusThreetextColor}"
+        textSize="11" />
 
-    <VText
-            text="${price}"
-            layoutHeight="wrap_content"
-            layoutMarginTop="4rp"
-            layoutMarginBottom="4rp"
-            layoutMarginLeft="25rp"
-            layoutWidth="wrap_content"
-            textColor="#FF0036"
-            textSize="11"/>
+    <VText layoutHeight="wrap_content"
+        layoutMarginBottom="4rp"
+        layoutMarginLeft="25rp"
+        layoutMarginTop="4rp"
+        layoutWidth="wrap_content"
+        text="${price}"
+        textColor="#FF0036"
+        textSize="11" />
 </VHLayout>

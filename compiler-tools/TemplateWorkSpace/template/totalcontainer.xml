@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,30 +22,27 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
-        layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
-            text="Title: native = TMTag"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
 
-    <FrameLayout
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: native = TMTag"
+        textColor="#333333"
+        textSize="12" />
+
+    <FrameLayout layoutHeight="20"
+        layoutWidth="match_parent">
+
+        <TotalContainer dataTag="${tags}"
+            layoutHeight="wrap_content"
             layoutWidth="match_parent"
-            layoutHeight="20"
-    >
-        <TotalContainer
-                layoutWidth="match_parent"
-                layoutHeight="wrap_content"
-                native="TMTags"
-                dataTag="${tags}"
-        />
+            native="TMTags" />
+
     </FrameLayout>
 
 </VHLayout>

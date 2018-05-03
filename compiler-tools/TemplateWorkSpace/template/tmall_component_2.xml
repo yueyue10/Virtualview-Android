@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,8 +22,7 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-    action="action"
+<VHLayout action="action"
     flag="flag_exposure|flag_clickable"
     layoutHeight="wrap_content"
     layoutWidth="wrap_content"
@@ -33,18 +31,16 @@
     paddingLeft="10"
     paddingRight="10"
     paddingTop="10"
-    xmlns="http://schemas.vv.com/apk/res/vv"
->
-    <NImage
-        id="1"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <NImage id="1"
         layoutGravity="h_center"
         layoutHeight="196rp"
         layoutMarginBottom="6"
         layoutWidth="296rp"
         scaleType="center_crop"
         src="http://news.online.sh.cn/news/gb/content/attachement/jpeg/site1/20180502/IMGf48e389446e847523566649.jpeg" />
-    <VText
-        id="2"
+    <VText id="2"
         layoutGravity="h_center"
         layoutHeight="wrap_content"
         layoutWidth="wrap_content"

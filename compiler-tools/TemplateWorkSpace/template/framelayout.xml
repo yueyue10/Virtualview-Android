@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,104 +22,91 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
-            text="Title: overlay"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+        text="Title: overlay"
+        textColor="#333333"
+        textSize="12" />
 
-    <FrameLayout
-            layoutWidth="match_parent"
-            layoutHeight="200"
-        >
-        <VGraph
-                layoutWidth="wrap_content"
-                layoutHeight="wrap_content"
-                diameterX="150"
-                diameterY="150"
-                type="circle"
-                color="#0000FF" />
+    <FrameLayout layoutHeight="200"
+        layoutWidth="match_parent">
 
-        <VGraph
-                layoutWidth="wrap_content"
-                layoutHeight="wrap_content"
-                diameterX="100"
-                diameterY="100"
-                type="circle"
-                color="#0088FF" />
+        <VGraph color="#0000FF"
+            diameterX="150"
+            diameterY="150"
+            layoutHeight="wrap_content"
+            layoutWidth="wrap_content"
+            type="circle" />
 
-        <VGraph
-                layoutWidth="wrap_content"
-                layoutHeight="wrap_content"
-                diameterX="50"
-                diameterY="50"
-                type="circle"
-                color="#8888FF" />
+        <VGraph color="#0088FF"
+            diameterX="100"
+            diameterY="100"
+            layoutHeight="wrap_content"
+            layoutWidth="wrap_content"
+            type="circle" />
+
+        <VGraph color="#8888FF"
+            diameterX="50"
+            diameterY="50"
+            layoutHeight="wrap_content"
+            layoutWidth="wrap_content"
+            type="circle" />
     </FrameLayout>
 
-    <VText
-            text="Title: child layoutGravity = left,right,top,bottom..."
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: child layoutGravity = left,right,top,bottom..."
+        textColor="#333333"
+        textSize="12" />
 
-    <FrameLayout
-            layoutWidth="match_parent"
-            layoutHeight="250"
-    >
-        <VText
-                layoutWidth="150"
-                layoutHeight="150"
-                background="#0000FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="default position" />
+    <FrameLayout layoutHeight="250"
+        layoutWidth="match_parent">
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="150"
+            text="default position"
+            textSize="12" />
 
-        <VText
-                layoutWidth="150"
-                layoutHeight="150"
-                background="#0088FF"
-                layoutGravity="right"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="layoutGravity=right" />
+        <VText background="#0088FF"
+            gravity="v_center|h_center"
+            layoutGravity="right"
+            layoutHeight="150"
+            layoutWidth="150"
+            text="layoutGravity=right"
+            textSize="12" />
 
-        <VText
-                layoutWidth="150"
-                layoutHeight="150"
-                background="#8888FF"
-                layoutGravity="right|bottom"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="layoutGravity=right|bottom" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutGravity="right|bottom"
+            layoutHeight="150"
+            layoutWidth="150"
+            text="layoutGravity=right|bottom"
+            textSize="12" />
 
-        <VText
-                layoutWidth="150"
-                layoutHeight="150"
-                background="#FF8888"
-                layoutGravity="left|bottom"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="layoutGravity=left|bottom" />
+        <VText background="#FF8888"
+            gravity="v_center|h_center"
+            layoutGravity="left|bottom"
+            layoutHeight="150"
+            layoutWidth="150"
+            text="layoutGravity=left|bottom"
+            textSize="12" />
 
-        <VText
-                layoutWidth="100"
-                layoutHeight="100"
-                background="#FF8800"
-                layoutGravity="v_center|h_center"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="center" />
+        <VText background="#FF8800"
+            gravity="v_center|h_center"
+            layoutGravity="v_center|h_center"
+            layoutHeight="100"
+            layoutWidth="100"
+            text="center"
+            textSize="12" />
     </FrameLayout>
 
 </VHLayout>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,29 +22,27 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
-        layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
-            text="Title: orientation = V | autoSwitch = true | stayTime = 2000 | canSlide = false"
-            name="title"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
 
-    <Page
-            autoSwitch="true"
-            dataTag="${data}"
-            stayTime="2000"
-            canSlide="false"
-            orientation="V"
-            onPageFlip="${this.parent.title.textColor=data.color[this.curPos]}"
-            layoutWidth="match_parent"
-            layoutHeight="33.5" />
+    <VText name="title"
+        background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: orientation = V | autoSwitch = true | stayTime = 2000 | canSlide = false"
+        textColor="#333333"
+        textSize="12" />
+
+    <Page autoSwitch="true"
+        canSlide="false"
+        dataTag="${data}"
+        layoutHeight="33.5"
+        layoutWidth="match_parent"
+        onPageFlip="${this.parent.title.textColor=data.color[this.curPos]}"
+        orientation="V"
+        stayTime="2000" />
 
 </VHLayout>

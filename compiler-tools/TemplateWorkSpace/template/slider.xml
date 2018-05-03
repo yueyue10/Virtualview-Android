@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,41 +22,38 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
-        layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
     <!--<VText-->
-            <!--text="Title: orientation = V"-->
-            <!--textSize="12"-->
-            <!--textColor="#333333"-->
-            <!--background="#008899"-->
-            <!--layoutWidth="match_parent"-->
-            <!--layoutHeight="20" />-->
+    <!--text="Title: orientation = V"-->
+    <!--textSize="12"-->
+    <!--textColor="#333333"-->
+    <!--background="#008899"-->
+    <!--layoutWidth="match_parent"-->
+    <!--layoutHeight="20" />-->
 
     <!--<Slider-->
-            <!--dataTag="${items}"-->
-            <!--orientation="V"-->
-            <!--itemWidth="227rp"-->
-            <!--layoutWidth="match_parent"-->
-            <!--layoutHeight="285rp" />-->
+    <!--dataTag="${items}"-->
+    <!--orientation="V"-->
+    <!--itemWidth="227rp"-->
+    <!--layoutWidth="match_parent"-->
+    <!--layoutHeight="285rp" />-->
 
-    <VText
-            text="Title: orientation = H"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: orientation = H"
+        textColor="#333333"
+        textSize="12" />
 
-    <Slider
-            dataTag="${items}"
-			span="10rp"
-            orientation="H"
-            itemWidth="227rp"
-            layoutWidth="match_parent"
-            layoutHeight="285rp" />
+    <Slider dataTag="${items}"
+        itemWidth="227rp"
+        layoutHeight="285rp"
+        layoutWidth="match_parent"
+        orientation="H"
+        span="10rp" />
 
 </VHLayout>

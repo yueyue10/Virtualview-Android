@@ -22,8 +22,7 @@
   ~ SOFTWARE.
   -->
 
-<FrameLayout
-    action="action"
+<FrameLayout action="action"
     autoDimDirection="X"
     autoDimX="340"
     autoDimY="240"
@@ -31,34 +30,30 @@
     flag="flag_exposure|flag_clickable"
     layoutHeight="wrap_content"
     layoutWidth="340rp"
-    xmlns="http://schemas.vv.com/apk/res/vv"
->
-    <NImage
-        layoutGravity="top|left"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+    
+    <NImage layoutGravity="top|left"
         layoutHeight="28.5rp"
         layoutMarginLeft="30rp"
         layoutMarginTop="29rp"
         layoutWidth="212.5rp"
         scaleType="fit_xy"
         src="https://gw.alicdn.com/tfs/TB1DlkbSFXXXXaPXXXXXXXXXXXX-320-44.png" />
-    <NImage
-        layoutGravity="top|left"
+    <NImage layoutGravity="top|left"
         layoutHeight="29rp"
         layoutMarginLeft="29rp"
         layoutMarginTop="71rp"
         layoutWidth="143rp"
         scaleType="fit_xy"
         src="https://gw.alicdn.com/tfs/TB1ZwKHSFXXXXbMXFXXXXXXXXXX-215-43.png" />
-    <NImage
-        layoutGravity="top|left"
+    <NImage layoutGravity="top|left"
         layoutHeight="120rp"
         layoutMarginLeft="29rp"
         layoutMarginTop="112rp"
         layoutWidth="120rp"
         scaleType="fit_xy"
         src="https://img.alicdn.com/bao/uploaded/i3/725677994/TB127CMRXXXXXaaXpXXXXXXXXXX_!!0-item_pic.jpg" />
-    <NImage
-        layoutGravity="bottom|left"
+    <NImage layoutGravity="bottom|left"
         layoutHeight="150rp"
         layoutMarginLeft="185rp"
         layoutMarginTop="81rp"

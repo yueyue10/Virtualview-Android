@@ -151,6 +151,10 @@
     <!--自定义属性-->
     <xs:attribute name='text'
         type='xs:string' />
+    <xs:attribute name='name'
+        type='xs:string' />
+    <xs:attribute name='native'
+        type='xs:string' />
     <xs:attribute name='textColor'
         type='xs:int' />
     <xs:attribute name='textSize'
@@ -289,6 +293,19 @@
                     <xs:restriction base='xs:NMTOKEN'>
                         <xs:enumeration value='stroke' />
                         <xs:enumeration value='fill' />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:union>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:attribute name='type'>
+        <xs:simpleType>
+            <xs:union memberTypes='xs:string'>
+                <xs:simpleType>
+                    <xs:restriction base='xs:NMTOKEN'>
+                        <xs:enumeration value='circle' />
+                        <xs:enumeration value='rect' />
                     </xs:restriction>
                 </xs:simpleType>
             </xs:union>

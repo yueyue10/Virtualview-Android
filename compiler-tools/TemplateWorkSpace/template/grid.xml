@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,46 +22,40 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
-        layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
-            text="Title: colCount = 2"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
 
-    <Grid
-            layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            colCount="2"
-            dataTag="${items}"
-        >
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: colCount = 2"
+        textColor="#333333"
+        textSize="12" />
+
+    <Grid colCount="2"
+        dataTag="${items}"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent">
 
     </Grid>
 
-    <VText
-            text="Title: gap = 10"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
-            layoutWidth="match_parent"
-            layoutHeight="20" />
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: gap = 10"
+        textColor="#333333"
+        textSize="12" />
 
-    <Grid
-            layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            itemVerticalMargin="10"
-            itemHorizontalMargin="10"
-            colCount="2"
-            itemHeight="200"
-            dataTag="${items}"
-    >
+    <Grid colCount="2"
+        dataTag="${items}"
+        itemHeight="200"
+        itemHorizontalMargin="10"
+        itemVerticalMargin="10"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent">
 
     </Grid>
 

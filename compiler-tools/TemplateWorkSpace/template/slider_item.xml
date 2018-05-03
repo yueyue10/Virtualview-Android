@@ -24,51 +24,47 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
+<VHLayout action="action"
     flag="flag_exposure|flag_clickable"
-    action="action"
-    orientation="V"
+    layoutHeight="285rp"
     layoutWidth="227rp"
-    layoutHeight="285rp">
-    <VHLayout
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VHLayout background="#FFFFFF"
         layoutHeight="227rp"
-        layoutWidth="227rp"
-        background="#FFFFFF">
-        <NImage
-            id="5"
-            src="${imgUrl}"
-            scaleType="center_crop"
+        layoutWidth="227rp">
+        <NImage id="5"
             layoutGravity="v_center|h_center"
-            layoutWidth="match_parent"
             layoutHeight="match_parent"
-            paddingTop="@{${hasImgPadding} ? 10 : 0 }"
-            paddingRight="@{${hasImgPadding} ? 10 : 0 }"
+            layoutWidth="match_parent"
             paddingBottom="@{${hasImgPadding} ? 10 : 0 }"
-            paddingLeft="@{${hasImgPadding} ? 10 : 0 }"/>
+            paddingLeft="@{${hasImgPadding} ? 10 : 0 }"
+            paddingRight="@{${hasImgPadding} ? 10 : 0 }"
+            paddingTop="@{${hasImgPadding} ? 10 : 0 }"
+            scaleType="center_crop"
+            src="${imgUrl}" />
     </VHLayout>
-    <VHLayout
-        id="3"
+    <VHLayout background="${bgColor}"
         dataTag="titleBar"
-        orientation="V"
         gravity="v_center|h_center"
-        background="${bgColor}"
+        id="3"
         layoutHeight="58rp"
-        layoutWidth="227rp" >
-        <VHLayout
-            id="999"
-            orientation="H"
+        layoutWidth="227rp"
+        orientation="V">
+        <VHLayout id="999"
             layoutGravity="v_center|h_center"
             layoutHeight="42rp"
-            layoutWidth="wrap_content" >
-            <VText
-                layoutGravity="h_center|v_center"
-                gravity="v_center|h_center"
+            layoutWidth="wrap_content"
+            orientation="H">
+            <VText gravity="v_center|h_center"
                 id="4"
+                layoutGravity="h_center|v_center"
+                layoutHeight="match_parent"
+                layoutWidth="wrap_content"
                 text="${title}"
                 textColor="#000000"
-                textSize="14"
-                layoutHeight="match_parent"
-                layoutWidth="wrap_content" />
+                textSize="14" />
         </VHLayout>
     </VHLayout>
 </VHLayout>

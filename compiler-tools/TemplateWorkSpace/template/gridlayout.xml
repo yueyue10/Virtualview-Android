@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,249 +22,215 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout
-        flag="flag_exposure|flag_clickable"
-        orientation="V"
+<VHLayout flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="match_parent"
->
-    <VText
         text="Title: colCount = 2"
-        textSize="12"
         textColor="#333333"
-        background="#008899"
+        textSize="12" />
+
+    <GridLayout colCount="2"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent">
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
+
+        <VText background="#0088FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
+
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
+
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
+
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
+
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
+
+    </GridLayout>
+
+    <VText background="#008899"
+        layoutHeight="20"
         layoutWidth="match_parent"
-        layoutHeight="20" />
+        text="Title: itemHeight = 180"
+        textColor="#333333"
+        textSize="12" />
 
-    <GridLayout
+    <GridLayout colCount="2"
+        itemHeight="180"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent">
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            colCount="2"
-    >
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0000FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0088FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-    </GridLayout>
-
-    <VText
-            text="Title: itemHeight = 180"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
+        <VText background="#0088FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="20" />
+            text="1"
+            textSize="12" />
 
-    <GridLayout
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            itemHeight="180"
-            colCount="2"
-    >
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0000FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0088FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
 
     </GridLayout>
 
-    <VText
-            text="Title: gap = 10"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: gap = 10"
+        textColor="#333333"
+        textSize="12" />
+
+    <GridLayout colCount="2"
+        itemHorizontalMargin="10"
+        itemVerticalMargin="10"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent">
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="20" />
+            text="1"
+            textSize="12" />
 
-    <GridLayout
+        <VText background="#0088FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="wrap_content"
-            itemVerticalMargin="10"
-            itemHorizontalMargin="10"
-            colCount="2"
-    >
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0000FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0088FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
     </GridLayout>
 
-    <VText
-            text="Title: colCount = 3"
-            textSize="12"
-            textColor="#333333"
-            background="#008899"
+    <VText background="#008899"
+        layoutHeight="20"
+        layoutWidth="match_parent"
+        text="Title: colCount = 3"
+        textColor="#333333"
+        textSize="12" />
+
+    <GridLayout colCount="3"
+        layoutHeight="450"
+        layoutWidth="match_parent">
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="20" />
+            text="1"
+            textSize="12" />
 
-    <GridLayout
+        <VText background="#0088FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
             layoutWidth="match_parent"
-            layoutHeight="450"
-            colCount="3"
-    >
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0000FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#0088FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
-
-        <VText
-                layoutWidth="match_parent"
-                layoutHeight="150"
-                background="#8888FF"
-                textSize="12"
-                gravity="v_center|h_center"
-                text="1" />
+        <VText background="#8888FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="1"
+            textSize="12" />
 
     </GridLayout>
 

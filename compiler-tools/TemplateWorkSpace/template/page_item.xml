@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -23,47 +22,44 @@
   ~ SOFTWARE.
   -->
 
-<RatioLayout
-        flag="flag_exposure|flag_clickable"
-        action="action"
-        orientation="V"
+<RatioLayout action="action"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="wrap_content"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <RatioLayout layoutHeight="0"
+        layoutMarginBottom="1.5"
+        layoutRatio="1"
         layoutWidth="wrap_content"
-        layoutHeight="match_parent">
-    <RatioLayout
-            orientation="H"
-            layoutWidth="wrap_content"
-            layoutMarginBottom="1.5"
+        orientation="H">
+        <VText ellipsize="end"
+            id="3"
+            layoutGravity="v_center"
+            layoutHeight="wrap_content"
             layoutRatio="1"
-            layoutHeight="0">
-        <VText
-                id="3"
-                text="${title1}"
-                textSize="12"
-                textColor="#333333"
-                layoutGravity="v_center"
-                layoutRatio="1"
-                layoutWidth="wrap_content"
-                layoutHeight="wrap_content"
-                ellipsize="end"/>
+            layoutWidth="wrap_content"
+            text="${title1}"
+            textColor="#333333"
+            textSize="12" />
     </RatioLayout>
 
-    <RatioLayout
-            orientation="H"
-            layoutWidth="wrap_content"
-            layoutMarginTop="1.5"
-            gravity="v_center"
+    <RatioLayout gravity="v_center"
+        layoutHeight="0"
+        layoutMarginTop="1.5"
+        layoutRatio="1"
+        layoutWidth="wrap_content"
+        orientation="H">
+        <VText ellipsize="end"
+            id="4"
+            layoutGravity="v_center"
+            layoutHeight="wrap_content"
             layoutRatio="1"
-            layoutHeight="0">
-        <VText
-                id="4"
-                text="${title2}"
-                textSize="12"
-                textColor="#333333"
-                layoutGravity="v_center"
-                layoutRatio="1"
-                layoutWidth="wrap_content"
-                layoutHeight="wrap_content"
-                ellipsize="end"/>
+            layoutWidth="wrap_content"
+            text="${title2}"
+            textColor="#333333"
+            textSize="12" />
     </RatioLayout>
 
 </RatioLayout>
