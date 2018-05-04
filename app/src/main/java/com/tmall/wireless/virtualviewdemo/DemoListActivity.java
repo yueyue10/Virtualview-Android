@@ -33,12 +33,14 @@ import android.app.ListActivity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.socks.library.KLog;
 import com.tmall.wireless.virtualviewdemo.preview.PreviewListActivity;
 
 /**
@@ -83,6 +85,8 @@ public class DemoListActivity extends ListActivity {
 
         ListAdapter listAdapter = new SimpleAdapter(this, list, android.R.layout.simple_list_item_1, new String[]{"name"}, new int[]{android.R.id.text1});
         setListAdapter(listAdapter);
+        String path=Environment.getExternalStorageDirectory().getAbsolutePath();
+        KLog.d(path);
     }
 
     @Override

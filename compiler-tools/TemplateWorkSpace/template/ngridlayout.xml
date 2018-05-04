@@ -188,49 +188,49 @@
         textColor="#333333"
         textSize="12" />
 
-    <NGridLayout colCount="3"
+    <NGridLayout colCount="6"
         layoutHeight="450"
         layoutWidth="match_parent">
         <VText background="#0000FF"
             gravity="v_center|h_center"
             layoutHeight="150"
             layoutWidth="match_parent"
-            text="1"
+            text="2"
             textSize="12" />
 
         <VText background="#0088FF"
             gravity="v_center|h_center"
             layoutHeight="150"
             layoutWidth="match_parent"
-            text="1"
+            text="2"
             textSize="12" />
 
         <VText background="#8888FF"
             gravity="v_center|h_center"
             layoutHeight="150"
             layoutWidth="match_parent"
-            text="1"
+            text="2"
             textSize="12" />
 
         <VText background="#8888FF"
             gravity="v_center|h_center"
             layoutHeight="150"
             layoutWidth="match_parent"
-            text="1"
+            text="2"
             textSize="12" />
 
         <VText background="#8888FF"
             gravity="v_center|h_center"
             layoutHeight="150"
             layoutWidth="match_parent"
-            text="1"
+            text="2"
             textSize="12" />
 
         <VText background="#8888FF"
             gravity="v_center|h_center"
             layoutHeight="150"
             layoutWidth="match_parent"
-            text="1"
+            text="2"
             textSize="12" />
 
     </NGridLayout>

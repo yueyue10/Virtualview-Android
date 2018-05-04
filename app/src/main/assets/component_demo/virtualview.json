@@ -2,7 +2,8 @@
   "style": {
     "text-align": "h_center",
     "font-size": "20",
-    "color": "#FF5000"
+    "color": "#FF5000",
+    "margin": "[30,30,30,30]"
   },
   "title": "超高性 99.9% 的用户觉得很快",
   "logoUrl": "https://gw.alicdn.com/tfs/TB1yGIdkb_I8KJjy1XaXXbsxpXa-72-72.png",
@@ -12,7 +13,6 @@
   "width": "500",
   "height": "200",
   "imgUrl": "https://t10.baidu.com/it/u=2115052398,3032439749&fm=173&app=25&f=JPEG?w=600&h=337&s=198CA35DD27042261229B56A0300A032",
-
   "bgImgUrl": "https://img.alicdn.com/tfs/TB11mGXRpXXXXcAXpXXXXXXXXXX-782-610.png",
   "data": [
     {
