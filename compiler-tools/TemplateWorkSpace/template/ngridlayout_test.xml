@@ -57,9 +57,9 @@
             text="singlecolumn"
             textSize="15" />
     </NGridLayout>
+
     <NGridLayout background="#00cccc"
         colCount="2"
-        hGap="10"
         itemHorizontalMargin="10"
         layoutHeight="wrap_content"
         layoutWidth="match_parent">

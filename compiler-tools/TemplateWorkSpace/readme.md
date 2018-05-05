@@ -66,3 +66,4 @@ FileInputStream fis = new FileInputStream(rootDir);
 //调用接口，传入必备参数，此时不区分平台，如果要区分平台，使用方单独编译即可
 byte[] result = viewCompiler.compile(fis, "icon", 13);
 ```
+运行命令：python buildAndPreview.py VH2Layout
