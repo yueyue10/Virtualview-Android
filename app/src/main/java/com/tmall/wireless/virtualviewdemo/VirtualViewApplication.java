@@ -76,6 +76,7 @@ import com.tmall.wireless.virtualviewdemo.bytes.TMALLCOMPONENT6;
 import com.tmall.wireless.virtualviewdemo.bytes.TMALLCOMPONENT7;
 import com.tmall.wireless.virtualviewdemo.bytes.TMALLCOMPONENT8;
 import com.tmall.wireless.virtualviewdemo.bytes.TOTALCONTAINER;
+import com.tmall.wireless.virtualviewdemo.bytes.TRAVELITEM;
 import com.tmall.wireless.virtualviewdemo.bytes.VGRAPH;
 import com.tmall.wireless.virtualviewdemo.bytes.VH;
 import com.tmall.wireless.virtualviewdemo.bytes.VH2LAYOUT;
@@ -223,6 +224,7 @@ public class VirtualViewApplication extends Application {
             sViewManager.loadBinBufferSync(TMALLCOMPONENT6.BIN);
             sViewManager.loadBinBufferSync(TMALLCOMPONENT7.BIN);
             sViewManager.loadBinBufferSync(TMALLCOMPONENT8.BIN);
+            sViewManager.loadBinBufferSync(TRAVELITEM.BIN);
             sViewManager.loadBinBufferSync(PICASSO.BIN);
             sViewManager.getViewFactory().registerBuilder(BizCommon.TM_TOTAL_CONTAINER,new TotalContainer.Builder());
             sViewManager.getViewFactory().registerBuilder(1014,new PicassoImage.Builder());
