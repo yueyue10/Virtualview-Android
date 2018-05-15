@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2017 Alibaba Group
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<VHLayout background="#F5F5F5"
+    flag="flag_exposure|flag_clickable"
+    layoutHeight="match_parent"
+    layoutWidth="match_parent"
+    orientation="V"
+    xmlns="http://schemas.vv.com/apk/res/vv">
+
+    <VText background="#008899"
+        gravity="h_center|v_center"
+        layoutHeight="50"
+        layoutWidth="match_parent"
+        text="京东第二行九宫格"
+        textColor="#333333"
+        textSize="15" />
+
+    <Grid colCount="5"
+        dataTag="${items}"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent"></Grid>
+
+    <VH2Layout background="#FFFFFF"
+        borderRadius="10"
+        layoutHeight="wrap_content"
+        layoutMargin="10"
+        layoutWidth="match_parent"
+        orientation="H"
+        padding="10">
+
+        <VText layoutGravity="v_center"
+            layoutHeight="wrap_content"
+            layoutWidth="wrap_content"
+            text="京东快报"
+            textSize="15"
+            textStyle="bold" />
+
+        <Page autoSwitch="true"
+            canSlide="true"
+            dataTag="${page}"
+            layoutGravity="v_center"
+            layoutHeight="20"
+            layoutMarginLeft="10"
+            layoutWidth="match_parent"
+            orientation="V"
+            stayTime="2000" />
+
+        <VText layoutDirection="right"
+            layoutGravity="v_center"
+            layoutHeight="wrap_content"
+            layoutWidth="wrap_content"
+            text="更多"
+            textSize="14" />
+
+        <VLine background="#999999"
+            layoutDirection="right"
+            layoutGravity="v_center"
+            layoutHeight="13"
+            layoutMarginRight="10"
+            layoutWidth="1" />
+    </VH2Layout>
+
+    <GridLayout colCount="2"
+        itemHorizontalMargin="5"
+        itemVerticalMargin="5"
+        layoutHeight="wrap_content"
+        layoutMarginLeft="10"
+        layoutMarginRight="10"
+        layoutWidth="match_parent">
+
+        <VHLayout background="#FFFFFF"
+            layoutHeight="wrap_content"
+            layoutWidth="match_parent"
+            orientation="V"
+            padding="10">
+
+            <VHLayout layoutHeight="wrap_content"
+                layoutWidth="match_parent"
+                orientation="H">
+                <VText layoutGravity="v_center"
+                    layoutHeight="wrap_content"
+                    layoutWidth="wrap_content"
+                    text="京东秒杀"
+                    textSize="18" />
+            </VHLayout>
+            <Grid colCount="3"
+                dataTag="${miaoshadata}"
+                layoutHeight="wrap_content"
+                layoutWidth="match_parent" />
+        </VHLayout>
+
+        <VHLayout background="#FFFFFF"
+            layoutHeight="wrap_content"
+            layoutWidth="match_parent"
+            orientation="V"
+            padding="10">
+
+            <VHLayout layoutHeight="wrap_content"
+                layoutWidth="match_parent"
+                orientation="V">
+                <VText layoutGravity="v_center"
+                    layoutHeight="wrap_content"
+                    layoutWidth="wrap_content"
+                    text="发现好货"
+                    textSize="20" />
+                <VText layoutGravity="v_center"
+                    layoutHeight="wrap_content"
+                    layoutWidth="wrap_content"
+                    text="发现理想生活"
+                    textSize="20" />
+                <RatioLayout layoutHeight="wrap_content"
+                    layoutWidth="match_parent"
+                    orientation="H">
+                    <VImage layoutHeight="60"
+                        layoutWidth="60"
+                        ratio="1"
+                        src="${imgUrl}" />
+                    <VImage layoutHeight="60"
+                        layoutWidth="60"
+                        ratio="1"
+                        src="${imgUrl}" />
+                </RatioLayout>
+            </VHLayout>
+        </VHLayout>
+    </GridLayout>
+</VHLayout>

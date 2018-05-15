@@ -69,5 +69,42 @@
       "type": "JDGridItem",
       "height": 50
     }
+  ],
+  "page": [
+    {
+      "hot_text": "热门",
+      "content": "华为mate10发布",
+      "type": "JDPageItem"
+    },
+    {
+      "hot_text": "Hot",
+      "content": "一加手机很差",
+      "type": "JDPageItem"
+    },
+    {
+      "hot_text": "很好",
+      "content": "google还可以啊",
+      "type": "JDPageItem"
+    }
+  ],
+  "miaoshadata": [
+    {
+      "imgUrl": "http://www.onegreen.org/QQ/UploadFiles/201301/2013010611423790.jpg",
+      "priceNow": "139",
+      "priceOld": "190.00",
+      "type": "JDMSGridItem"
+    },
+    {
+      "imgUrl": "http://www.onegreen.org/QQ/UploadFiles/201301/2013010611423798.jpg",
+      "priceNow": "178",
+      "priceOld": "335.00",
+      "type": "JDMSGridItem"
+    },
+    {
+      "imgUrl": "http://www.onegreen.org/QQ/UploadFiles/201301/2013010611423761.jpg",
+      "priceNow": "118",
+      "priceOld": "298.00",
+      "type": "JDMSGridItem"
+    }
   ]
 }

@@ -72,6 +72,8 @@
         <xs:attribute ref="vv:action" />
         <xs:attribute ref="vv:class" />
         <xs:attribute ref="vv:onClick" />
+        <xs:attribute ref="vv:layoutDirection" />
+        <xs:attribute ref="vv:ratio" />
     </xs:complexType>
 
     <xs:element name="NText"
