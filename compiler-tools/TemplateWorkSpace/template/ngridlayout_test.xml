@@ -22,7 +22,7 @@
   ~ SOFTWARE.
   -->
 
-<VHLayout background="#00abcd"
+<VHLayout background="#ffffff"
     flag="flag_exposure|flag_clickable"
     layoutHeight="match_parent"
     layoutWidth="match_parent"
@@ -57,11 +57,16 @@
             text="singlecolumn"
             textSize="15" />
     </NGridLayout>
+
     <NGridLayout background="#00cccc"
         colCount="2"
-        hGap="10"
         itemHorizontalMargin="10"
+        itemVerticalMargin="10"
         layoutHeight="wrap_content"
+        layoutMarginBottom="10"
+        layoutMarginLeft="10"
+        layoutMarginRight="10"
+        layoutMarginTop="0"
         layoutWidth="match_parent">
 
         <VText background="#0000FF"
@@ -76,5 +81,157 @@
             layoutWidth="match_parent"
             text="column2"
             textSize="15" />
+    </NGridLayout>
+
+    <NGridLayout background="#00cccc"
+        colCount="3"
+        itemHorizontalMargin="10"
+        itemVerticalMargin="10"
+        layoutHeight="wrap_content"
+        layoutMarginBottom="10"
+        layoutMarginLeft="10"
+        layoutMarginRight="10"
+        layoutMarginTop="0"
+        layoutWidth="match_parent">
+
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="itme1"
+            textSize="15" />
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="itme2"
+            textSize="15" />
+        <VText background="#0000FF"
+            gravity="v_center|h_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="itme3"
+            textSize="15" />
+    </NGridLayout>
+    <VText
+        gravity="h_center|v_center"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent"
+        padding="10"
+        text="RecyclerView"
+        textColor="#000000"
+        textSize="15" />
+    <NGridLayout
+        background="#B8E986"
+        colCount="2"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent"
+        padding="10">
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="item1" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="150"
+            layoutWidth="match_parent"
+            text="item2" />
+    </NGridLayout>
+    <NGridLayout
+        background="#B8E986"
+        colCount="2"
+        itemHorizontalMargin="10"
+        itemVerticalMargin="10"
+        layoutHeight="wrap_content"
+        layoutWidth="match_parent"
+        padding="10">
+
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item1" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item2" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item3" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item2" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item3" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item4" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item5" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item6" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item7" />
+        <VText
+            background="#F5A623"
+            borderColor="#9E9E96"
+            borderWidth="1"
+            gravity="h_center|v_center"
+            layoutHeight="130"
+            layoutWidth="match_parent"
+            text="item8" />
     </NGridLayout>
 </VHLayout>

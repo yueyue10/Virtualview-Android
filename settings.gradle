@@ -22,4 +22,4 @@
  * SOFTWARE.
  */
 
-include ':app', ':virtualview'
+include ':app', ':virtualview', ':vvtest'

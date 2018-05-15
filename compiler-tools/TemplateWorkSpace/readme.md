@@ -66,6 +66,7 @@ FileInputStream fis = new FileInputStream(rootDir);
 //调用接口，传入必备参数，此时不区分平台，如果要区分平台，使用方单独编译即可
 byte[] result = viewCompiler.compile(fis, "icon", 13);
 ```
+运行命令：python buildAndPreview.py VH2Layout
 python buildAndPreview.py GridLayout
 1.需要配合json文件的效果，需要先修改virtualview.json文件，并提交到：http://www.wanandroid.com/tools/mockapi的getVirtualView_JsonString下面
 2.修改布局文件执行更新

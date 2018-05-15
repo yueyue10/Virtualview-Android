@@ -5,69 +5,100 @@
     "color": "#FF5000",
     "margin": "[30,30,30,30]"
   },
-  "imgUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=359508127,3865417743&fm=15&gp=0.jpg",
-  "title": "京东Item标题测试",
-  "height": 50,
+  "title": "超高性 99.9% 的用户觉得很快",
+  "logoUrl": "https://gw.alicdn.com/tfs/TB1yGIdkb_I8KJjy1XaXXbsxpXa-72-72.png",
+  "aUrl": "http://imgsrc.baidu.com/imgad/pic/item/6609c93d70cf3bc77c2f2b1fdb00baa1cd112a12.jpg",
+  "bUrl": "http://imgsrc.baidu.com/image/c0%3Dpixel_huitu%2C0%2C0%2C294%2C40/sign=76a4892e49a7d933aba5ec33c433b47f/a8773912b31bb051810e00123d7adab44aede0e6.jpg",
+  "paddingBottom": "10",
+  "width": "500",
+  "height": "200",
+  "imgUrl": "https://t10.baidu.com/it/u=2115052398,3032439749&fm=173&app=25&f=JPEG?w=600&h=337&s=198CA35DD27042261229B56A0300A032",
+  "bgImgUrl": "https://img.alicdn.com/tfs/TB11mGXRpXXXXcAXpXXXXXXXXXX-782-610.png",
+  "top-margin": "20rp",
+  "right-padding": "6rp",
+  "tag-padding": "3rp",
+  "data": [
+    {
+      "imgUrl": "https://img.alicdn.com/tfs/TB1ZdpvRpXXXXX9aFXXXXXXXXXX-134-176.png",
+      "hasImgPadding": "true",
+      "price": "￥99.5",
+      "title": "商品标题如果很长的话怎么办",
+      "titleColor": "#ff00ff",
+      "benefitColor": "#00ff00",
+      "benefitTitle": "利益标",
+      "type": "TmallComponent6"
+    },
+    {
+      "imgUrl": "https://img.alicdn.com/tfs/TB1CS1nRpXXXXauXXXXXXXXXXXX-215-215.png",
+      "hasImgPadding": "false",
+      "price": "￥199",
+      "title": "花美男",
+      "titleColor": "#000000",
+      "benefitColor": "#ff0000",
+      "benefitTitle": "一起来",
+      "type": "TmallComponent6"
+    },
+    {
+      "imgUrl": "https://img.alicdn.com/tfs/TB1eYKVPpXXXXa3XVXXXXXXXXXX-244-196.png",
+      "price": "￥9.9",
+      "hasImgPadding": "9.9",
+      "title": "高跟美鞋",
+      "titleColor": "#000000",
+      "benefitColor": "#0000ff",
+      "benefitTitle": "",
+      "type": "TmallComponent6"
+    }
+  ],
   "items": [
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB2HWVhppXXXXc8XXXXXXXXXXXX_!!655983464.png",
       "title": "家有萌娃",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB2tDyXnwNlpuFjy0FfXXX3CpXa_!!0-juitemmedia.jpg",
       "title": "囤货小当家",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB2M3.FmNxmpuFjSZFNXXXrRXXa_!!2368290057-0-beehive-scenes.jpg",
       "title": "养生达人",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB2RShWdiBnpuFjSZFzXXaSrpXa_!!0-juitemmedia.jpg",
       "title": "吃货的后裔",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom///img.alicdn.com/bao/uploaded/TB1h3f5LFXXXXc.XXXXSutbFXXX.jpg",
       "title": "想要瘦瘦瘦",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB1hmEYJVXXXXaLXXXXwu0bFXXX.png",
       "title": "萌宠大作战",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB2XJF3jHXlpuFjSszfXXcSGXXa_!!0-juitemmedia.jpg",
       "title": "新时代主妇",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB1Q9OYRpXXXXaoXFXXSutbFXXX.jpg",
       "title": "健身狂人",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB1ChWzJXXXXXc2XFXXXXXXXXXX_!!0-item_pic.jpg",
       "title": "火锅爱好者",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     },
     {
       "imgUrl": "https://gw.alicdn.com/tfscom/TB1hXx6LpXXXXaMXFXXSutbFXXX.jpg",
       "title": "女神范",
-      "type": "JDGridItem",
-      "height": 50
+      "type": "GridItem"
     }
   ]
 }

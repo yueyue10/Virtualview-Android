@@ -53,11 +53,6 @@ public class ComponentListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(android.R.layout.list_content);
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-        HashMap<String, String> jd_grid = new HashMap<String, String>();
-        jd_grid.put("name", "JDGrid");
-        jd_grid.put("data", "component_demo/jd_grid_item.json");
-        jd_grid.put("class", ComponentActivity.class.getName());
-        list.add(jd_grid);
         HashMap<String, String> ntext = new HashMap<String, String>();
         ntext.put("name", "NText");
         ntext.put("data", "component_demo/ntext_style.json");
@@ -181,7 +176,7 @@ public class ComponentListActivity extends ListActivity {
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Map<String, String> item = (Map<String, String>)l.getItemAtPosition(position);
+        Map<String, String> item = (Map<String, String>) l.getItemAtPosition(position);
         String className = item.get("class");
         Intent intent = new Intent();
         intent.setComponent(new ComponentName(this, className));
