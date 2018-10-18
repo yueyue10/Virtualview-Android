@@ -40,10 +40,7 @@
         orientation="V">
 
         <NVH2Layout layoutHeight="wrap_content"
-            layoutMarginBottom="20rp"
-            layoutMarginLeft="20rp"
-            layoutMarginRight="20rp"
-            layoutMarginTop="20rp"
+            layoutMargin="20rp"
             layoutWidth="match_parent"
             orientation="H">
 
@@ -63,10 +60,7 @@
                 layoutGravity="v_center"
                 layoutHeight="wrap_content"
                 layoutWidth="wrap_content"
-                paddingBottom="6rp"
-                paddingLeft="6rp"
-                paddingRight="6rp"
-                paddingTop="6rp"
+                padding="6rp"
                 text="未开启"
                 textColor="#555555"
                 textSize="12" />
@@ -82,10 +76,7 @@
             <NImage id="5"
                 layoutGravity="v_center|h_center"
                 layoutHeight="200rp"
-                layoutMarginBottom="20rp"
-                layoutMarginLeft="20rp"
-                layoutMarginRight="20rp"
-                layoutMarginTop="20rp"
+                layoutMargin="20rp"
                 layoutWidth="200rp"
                 scaleType="center_crop"
                 src="${imgUrl}" />
@@ -127,10 +118,7 @@
                         layoutGravity="v_center"
                         layoutHeight="wrap_content"
                         layoutWidth="wrap_content"
-                        paddingBottom="5rp"
-                        paddingLeft="5rp"
-                        paddingRight="5rp"
-                        paddingTop="5rp"
+                        padding="3rp"
                         text="经典"
                         textColor="#f95555"
                         textSize="11" />
@@ -145,10 +133,7 @@
                         layoutMarginLeft="5"
                         layoutMarginRight="5"
                         layoutWidth="wrap_content"
-                        paddingBottom="5rp"
-                        paddingLeft="5rp"
-                        paddingRight="5rp"
-                        paddingTop="5rp"
+                        padding="3rp"
                         text="悠闲"
                         textColor="#f95555"
                         textSize="11" />
@@ -161,10 +146,7 @@
                         layoutGravity="v_center"
                         layoutHeight="wrap_content"
                         layoutWidth="wrap_content"
-                        paddingBottom="5rp"
-                        paddingLeft="5rp"
-                        paddingRight="5rp"
-                        paddingTop="5rp"
+                        padding="3rp"
                         text="朋友同行"
                         textColor="#f95555"
                         textSize="11" />
