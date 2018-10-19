@@ -202,6 +202,8 @@
         type='xs:anyType' />
     <xs:attribute name='supportHTMLStyle'
         type='xs:anyType' />
+    <xs:attribute name='ratio'
+        type='xs:int' />
     <xs:attribute name='gravity'>
         <xs:simpleType>
             <xs:union memberTypes='xs:string'>

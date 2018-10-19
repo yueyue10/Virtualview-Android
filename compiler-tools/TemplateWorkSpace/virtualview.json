@@ -1,0 +1,110 @@
+{
+  "style": {
+    "text-align": "h_center",
+    "font-size": "20",
+    "color": "#FF5000",
+    "margin": "[30,30,30,30]"
+  },
+  "imgUrl": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=359508127,3865417743&fm=15&gp=0.jpg",
+  "title": "京东Item标题测试",
+  "height": 50,
+  "items": [
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB2HWVhppXXXXc8XXXXXXXXXXXX_!!655983464.png",
+      "title": "家有萌娃",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB2tDyXnwNlpuFjy0FfXXX3CpXa_!!0-juitemmedia.jpg",
+      "title": "囤货小当家",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB2M3.FmNxmpuFjSZFNXXXrRXXa_!!2368290057-0-beehive-scenes.jpg",
+      "title": "养生达人",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB2RShWdiBnpuFjSZFzXXaSrpXa_!!0-juitemmedia.jpg",
+      "title": "吃货的后裔",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom///img.alicdn.com/bao/uploaded/TB1h3f5LFXXXXc.XXXXSutbFXXX.jpg",
+      "title": "想要瘦瘦瘦",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB1hmEYJVXXXXaLXXXXwu0bFXXX.png",
+      "title": "萌宠大作战",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB2XJF3jHXlpuFjSszfXXcSGXXa_!!0-juitemmedia.jpg",
+      "title": "新时代主妇",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB1Q9OYRpXXXXaoXFXXSutbFXXX.jpg",
+      "title": "健身狂人",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB1ChWzJXXXXXc2XFXXXXXXXXXX_!!0-item_pic.jpg",
+      "title": "火锅爱好者",
+      "type": "JDGridItem",
+      "height": 50
+    },
+    {
+      "imgUrl": "https://gw.alicdn.com/tfscom/TB1hXx6LpXXXXaMXFXXSutbFXXX.jpg",
+      "title": "女神范",
+      "type": "JDGridItem",
+      "height": 50
+    }
+  ],
+  "page": [
+    {
+      "hot_text": "热门",
+      "content": "华为mate10发布",
+      "type": "JDPageItem"
+    },
+    {
+      "hot_text": "Hot",
+      "content": "一加手机很差",
+      "type": "JDPageItem"
+    },
+    {
+      "hot_text": "很好",
+      "content": "google还可以啊",
+      "type": "JDPageItem"
+    }
+  ],
+  "miaoshadata": [
+    {
+      "imgUrl": "http://www.onegreen.org/QQ/UploadFiles/201301/2013010611423790.jpg",
+      "priceNow": "139",
+      "priceOld": "190.00",
+      "type": "JDMSGridItem"
+    },
+    {
+      "imgUrl": "http://www.onegreen.org/QQ/UploadFiles/201301/2013010611423798.jpg",
+      "priceNow": "178",
+      "priceOld": "335.00",
+      "type": "JDMSGridItem"
+    },
+    {
+      "imgUrl": "http://www.onegreen.org/QQ/UploadFiles/201301/2013010611423761.jpg",
+      "priceNow": "118",
+      "priceOld": "298.00",
+      "type": "JDMSGridItem"
+    }
+  ]
+}

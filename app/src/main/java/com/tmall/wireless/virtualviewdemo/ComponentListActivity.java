@@ -53,11 +53,6 @@ public class ComponentListActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(android.R.layout.list_content);
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-        HashMap<String, String> travels = new HashMap<String, String>();
-        travels.put("name", "TravelItem");
-        travels.put("data", "component_demo/virtualview.json");
-        list.add(travels);
-        travels.put("class", ComponentActivity.class.getName());
         HashMap<String, String> ntext = new HashMap<String, String>();
         ntext.put("name", "NText");
         ntext.put("data", "component_demo/ntext_style.json");

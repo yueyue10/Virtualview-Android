@@ -33,14 +33,15 @@
 
     <NImage id="5"
         layoutGravity="v_center|h_center"
-        layoutHeight="150"
+        layoutHeight="${height}"
         layoutWidth="match_parent"
         scaleType="center_crop"
         src="${imgUrl}" />
+
     <VText gravity="v_center|h_center"
         id="4"
         layoutGravity="right"
-        layoutHeight="30"
+        layoutHeight="wrap_content"
         layoutWidth="match_parent"
         text="${title}"
         textColor="#000000"

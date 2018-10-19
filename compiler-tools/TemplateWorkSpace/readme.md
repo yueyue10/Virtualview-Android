@@ -67,3 +67,7 @@ FileInputStream fis = new FileInputStream(rootDir);
 byte[] result = viewCompiler.compile(fis, "icon", 13);
 ```
 运行命令：python buildAndPreview.py VH2Layout
+python buildAndPreview.py GridLayout
+1.需要配合json文件的效果，需要先修改virtualview.json文件，并提交到：http://www.wanandroid.com/tools/mockapi的getVirtualView_JsonString下面
+2.修改布局文件执行更新
+3.如果修改了Grid的Item布局之后需要先执行Item布局的更新然后执行Grid的布局更新

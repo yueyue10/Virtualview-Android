@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2017 Alibaba Group
@@ -26,24 +24,24 @@
 
 <VHLayout action="action"
     flag="flag_exposure|flag_clickable"
+    layoutGravity="v_center"
     layoutHeight="wrap_content"
-    layoutWidth="match_parent"
-    orientation="V"
+    layoutWidth="wrap_content"
+    orientation="H"
     xmlns="http://schemas.vv.com/apk/res/vv">
 
-    <NImage id="5"
-        layoutGravity="v_center|h_center"
-        layoutHeight="150"
-        layoutWidth="match_parent"
-        scaleType="center_crop"
-        src="${imgUrl}" />
-    <VText gravity="v_center|h_center"
-        id="4"
-        layoutGravity="right"
-        layoutHeight="30"
-        layoutWidth="match_parent"
-        text="${title}"
-        textColor="#000000"
+    <VText ellipsize="end"
+        id="3"
+        layoutHeight="wrap_content"
+        layoutWidth="wrap_content"
+        text="${hot_text}"
+        textColor="#DA5C5D"
         textSize="14" />
 
+    <VText ellipsize="end"
+        layoutHeight="wrap_content"
+        layoutWidth="wrap_content"
+        text="${content}"
+        textColor="#333333"
+        textSize="14" />
 </VHLayout>

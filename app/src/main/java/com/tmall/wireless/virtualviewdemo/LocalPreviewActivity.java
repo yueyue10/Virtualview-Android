@@ -44,6 +44,7 @@ import android.support.v4.app.ActivityCompat;
 
 import com.socks.library.KLog;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -65,9 +66,18 @@ import com.tmall.wireless.virtualviewdemo.custom.ClickProcessorImpl;
 import com.tmall.wireless.virtualviewdemo.custom.ExposureProcessorImpl;
 import com.tmall.wireless.virtualviewdemo.preview.PreviewActivity;
 import com.tmall.wireless.virtualviewdemo.preview.util.HttpUtil;
+import com.tmall.wireless.virtualviewdemo.zyj.retrofit.AppConfig;
+import com.tmall.wireless.virtualviewdemo.zyj.retrofit.GetRequest_Interface;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * Created by longerian on 2018/3/2.
@@ -142,9 +152,7 @@ public class LocalPreviewActivity extends PreviewActivity {
         marginLayoutParams.rightMargin = p.mLayoutMarginRight;
         marginLayoutParams.bottomMargin = p.mLayoutMarginBottom;
         mLinearLayout.addView(container, marginLayoutParams);
-        JSONObject json = getJSONDataFromAsset(PLAY_DATA);
-        if (json != null)
-            iContainer.getVirtualView().setVData(json);
+        request1(iContainer);
     }
 
     private void initForPreview() {
@@ -270,5 +278,46 @@ public class LocalPreviewActivity extends PreviewActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * 第二种请求，得到原始的json数据
+     */
+    public void request1(IContainer iContainer) {
+        //步骤4:创建Retrofit对象
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(AppConfig.baseUrl) // 设置 网络请求 Url
+                .build();
+        // 步骤5:创建 网络请求接口 的实例
+        GetRequest_Interface request = retrofit.create(GetRequest_Interface.class);
+        //对 发送请求 进行封装
+        Call<ResponseBody> call = request.getVirtualView_JsonString();
+        //步骤6:发送网络请求(异步)
+        call.enqueue(new Callback<ResponseBody>() {
+            //请求成功时回调
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                // 步骤7：处理返回的数据结果
+                try {
+                    String jsonStr = new String(response.body().bytes());
+                    KLog.d(jsonStr);
+                    JSONObject json = new JSONObject(jsonStr);
+                    if (json != null)
+                        iContainer.getVirtualView().setVData(json);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    KLog.e(Log.getStackTraceString(e));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    KLog.e(Log.getStackTraceString(e));
+                }
+            }
+
+            //请求失败时回调
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable throwable) {
+                KLog.e("连接失败");
+            }
+        });
     }
 }
