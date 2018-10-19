@@ -19,8 +19,8 @@
 <div>
 <h6>步骤5截图：-----------步骤6截图：-----------步骤7截图：</h6>
 <img src="doc/操作5截图.png" width="30%"  />
-<img src="doc/运行效果图.jpg" width="40%" />
-<img src="doc/操作7截图.png" width="40%" />
+<img src="doc/运行效果图.jpg" width="30%" />
+<img src="doc/操作7截图.png" width="30%" />
 </div>
 
 > 关于在vlayout布局中使用xmlns属性(方便使用布局里的代码提醒功能)的说明：
