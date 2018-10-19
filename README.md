@@ -19,7 +19,7 @@
 <div>
 <h6>步骤5截图：-----------步骤6截图：-----------步骤7截图：</h6>
 <img src="doc/操作5截图.png" width="30%"  />
-<img src="doc/运行效果图.png" width="40%" />
+<img src="doc/运行效果图.jpg" width="40%" />
 <img src="doc/操作7截图.png" width="40%" />
 </div>
 
